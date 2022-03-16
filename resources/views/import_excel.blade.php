@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
  <head>
-  <title>Import Excel File in Laravel</title>
+  <title>Import Excel File</title>
  </head>
  <body>
   <br />

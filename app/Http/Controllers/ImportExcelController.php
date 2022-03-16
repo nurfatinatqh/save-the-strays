@@ -41,7 +41,7 @@ class ImportExcelController extends Controller
                     imagettftext($image, 18, 0, 880, 188, $color,$font, $date);
                     $name=$row[0];
                     imagettftext($image, 48, 0, 120, 520, $color,$font, $name);
-                    imagejpeg($image,"assets/certificate/genereted-certificate/" . $name . ".jpg");
+                    imagejpeg($image,"assets/certificate/generated-certificate" . $name . ".jpg");
                     //imagejpeg($image);
                     // imagedestroy($image);
                 }
@@ -49,7 +49,7 @@ class ImportExcelController extends Controller
             $zip      = new ZipArchive;
             $fileName = 'attachment.zip';
             if ($zip->open(public_path($fileName), ZipArchive::CREATE) === TRUE) {
-                $files = File::files('assets/certificate/genereted-certificate');
+                $files = File::files('assets/certificate/generated-certificate');
                 foreach ($files as $key => $value) {
                     $relativeName = basename($value);
                     $zip->addFile($value, $relativeName);

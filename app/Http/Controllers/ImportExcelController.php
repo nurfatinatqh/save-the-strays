@@ -32,7 +32,8 @@ class ImportExcelController extends Controller
             {
                 if ($key != 0) {
                     header('Content-type: image/jpeg');
-                    $font=asset('assets/certificate/arial.ttf');
+                    //$font = dirname(__FILE__) . "/public/assets/certificate/arial.ttf";
+                    $font='assets/certificate/arial.ttf';
                     $path = 'https://save-the-strays.herokuapp.com/assets/certificate/format.jpg';
                     $image=imagecreatefromjpeg($path);
                     $color=imagecolorallocate($image, 51, 51, 102);

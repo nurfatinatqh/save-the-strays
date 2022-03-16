@@ -41,7 +41,7 @@ class ImportExcelController extends Controller
                     imagettftext($image, 18, 0, 880, 188, $color,$font, $date);
                     $name=$row[0];
                     imagettftext($image, 48, 0, 120, 520, $color,$font, $name);
-                    imagejpeg($image,"https://save-the-strays.herokuapp.com/storage/app/certificate/generated-certificate/" . $name . ".jpg");
+                    imagejpeg($image,"storage/public/app/certificate/generated-certificate/" . $name . ".jpg");
                     //imagejpeg($image);
                     // imagedestroy($image);
                 }
@@ -49,7 +49,7 @@ class ImportExcelController extends Controller
             $zip      = new ZipArchive;
             $fileName = 'attachment.zip';
             if ($zip->open(public_path($fileName), ZipArchive::CREATE) === TRUE) {
-                $files = File::files('https://save-the-strays.herokuapp.com/storage/app/certificate/generated-certificate');
+                $files = File::files('storage/public/app/certificate/generated-certificate');
                 foreach ($files as $key => $value) {
                     $relativeName = basename($value);
                     $zip->addFile($value, $relativeName);

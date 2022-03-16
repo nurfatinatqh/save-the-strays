@@ -31,7 +31,7 @@
                         <span class="info-box-icon"><i class="far fa-sad-tear"></i></span>
           
                         <div class="info-box-content">
-                          <span class="info-box-text">Homeless Pets</span>
+                          <span class="info-box-text">Dashboardless Pets</span>
                           <span class="info-box-number">41,410</span>
                         </div>
                         <!-- /.info-box-content -->

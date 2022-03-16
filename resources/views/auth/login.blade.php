@@ -1,32 +1,4 @@
-@extends('layouts.design')
-
-@section('content')
-    <div class="">
-        <section class="parent">
-            <div class="container child">
-                <h4 class="font-alt align-center">Already a member of us?</h4>
-                <br>
-                <form method="POST" action="{{ route('login') }}">
-                    @csrf
-                    <div class="form-group">
-                    <input class="form-control" placeholder="Email" id="email" type="email" name="email" :value="old('email')" required autofocus />
-                    </div>
-                    <div class="form-group">
-                    <input class="form-control" id="password" type="password" name="password" placeholder="Password" required autocomplete="current-password"/>
-                    </div>
-                    <div class="form-group">
-                    <button class="btn btn-login"><b>Login</b></button>
-                    </div>
-                    @if (Route::has('password.request'))
-                        <div class="form-group align-center"><a href="{{ route('password.request') }}">Forgot Password?</a></div>
-                    @endif
-                </form>
-            </div>
-        </section>
-    </div>
-@endsection
-
-{{-- <x-guest-layout>
+<x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
@@ -81,4 +53,4 @@
             </div>
         </form>
     </x-auth-card>
-</x-guest-layout> --}}
+</x-guest-layout>

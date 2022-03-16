@@ -32,8 +32,8 @@ class ImportExcelController extends Controller
             {
                 if ($key != 0) {
                     header('Content-type: image/jpeg');
-                    $font='C:\Users\nurfa\OneDrive\Documents\GitHub\save-the-strays\public\assets\certificate\arial.ttf';
-                    $path = 'assets\certificate\format.jpg';
+                    $font='https://save-the-strays.herokuapp.com/public/assets/certificate/arial.ttf';
+                    $path = 'https://save-the-strays.herokuapp.com/assets/certificate/format.jpg';
                     $image=imagecreatefromjpeg($path);
                     $color=imagecolorallocate($image, 51, 51, 102);
                     $date=date('d F, Y');

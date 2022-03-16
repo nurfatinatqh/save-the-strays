@@ -31,8 +31,8 @@ Route::get('/dashboard', function () {
 Route::get('/certificate', function () {
 
     header('Content-type: image/jpeg');
-    $font='C:\Users\nurfa\OneDrive\Documents\Save-The-Strays\storage\app\certificate\arial.ttf';
-    $path = 'storage\app\certificate\format.jpg';
+    $font='C:\Users\nurfa\OneDrive\Documents\GitHub\save-the-strays\public\assets\certificate\arial.ttf';
+    $path = 'assets\certificate\format.jpg';
     $image=imagecreatefromjpeg($path);
     $color=imagecolorallocate($image, 51, 51, 102);
     $date=date('d F, Y');

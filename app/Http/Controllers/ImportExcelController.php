@@ -31,8 +31,8 @@ class ImportExcelController extends Controller
             {
                 if ($key != 0) {
                     header('Content-type: image/jpeg');
-                    $font='C:\Users\nurfa\OneDrive\Documents\Save-The-Strays\public\storage\app\certificate\arial.ttf';
-                    $path = 'storage\app\certificate\format.jpg';
+                    $font='C:\Users\nurfa\OneDrive\Documents\GitHub\save-the-strays\public\assets\certificate\arial.ttf';
+                    $path = 'assets\certificate\format.jpg';
                     $image=imagecreatefromjpeg($path);
                     $color=imagecolorallocate($image, 51, 51, 102);
                     $date=date('d F, Y');
@@ -47,11 +47,11 @@ class ImportExcelController extends Controller
             $zip      = new ZipArchive;
             $fileName = 'attachment.zip';
             if ($zip->open(public_path($fileName), ZipArchive::CREATE) === TRUE) {
-            $files = File::files(public_path('storage/app/certificate/generated-certificate'));
-            foreach ($files as $key => $value) {
-                $relativeName = basename($value);
-                $zip->addFile($value, $relativeName);
-            }
+                $files = File::files('storage/app/certificate/generated-certificate');
+                foreach ($files as $key => $value) {
+                    $relativeName = basename($value);
+                    $zip->addFile($value, $relativeName);
+                }
             $zip->close();
             }
             return response()->download(public_path($fileName));

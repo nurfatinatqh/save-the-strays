@@ -49,7 +49,7 @@ class ImportExcelController extends Controller
             $zip      = new ZipArchive;
             $fileName = 'attachment.zip';
             if ($zip->open(public_path($fileName), ZipArchive::CREATE) === TRUE) {
-                $files = File::files('assets/certificate');
+                $files = File::files('assets/certificate/generated-certificate');
                 foreach ($files as $key => $value) {
                     $relativeName = basename($value);
                     $zip->addFile($value, $relativeName);

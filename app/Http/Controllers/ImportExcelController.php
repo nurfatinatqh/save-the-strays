@@ -21,8 +21,9 @@ class ImportExcelController extends Controller
         'select_file'  => 'required|mimes:xls,xlsx'
         ]);
 
-        $path = $request->file('select_file')->getRealPath();
-
+        // $path = $request->file('select_file')->getRealPath();
+        $path1 = $request->file('select_file')->store('temp'); 
+        $path=storage_path('app').'/'.$path1;  
         $array = Excel::toArray(new ImportsUsersImport, $path);
 
         foreach($array as $value)

@@ -10,7 +10,7 @@
         <div class="col-sm-1 col-md-1 col-lg-1">
         </div>
         <div class="col-sm-6 col-md-4 col-lg-2">
-          <div class="callout-btn-box"><a class="btn btn-w btn-round" href="portfolio_boxed_gutter_col_3.html">Start Adopting</a></div>
+          <div class="callout-btn-box"><a class="btn btn-w btn-round" href="{{route('pet.profile')}}">Start Adopting</a></div>
         </div>
       </div>
     </div>

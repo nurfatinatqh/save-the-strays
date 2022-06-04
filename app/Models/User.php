@@ -18,9 +18,13 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'username',
         'email',
+        'role',
         'password',
+        'address',
+        'phone_number',
+        'image'
     ];
 
     /**
@@ -41,4 +45,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function volunteer () { return $this->hasMany('App\Models\Pet', 'volunteer_id'); }
+
+    public function volunteer_FU () { return $this->hasMany('App\Models\FollowUp', 'volunteer_id'); }
+
+    public function adopter () { return $this->hasMany('App\Models\Pet', 'adopter_id'); }
+
+    public function adopter_FU () { return $this->hasMany('App\Models\FollowUp', 'adopter_id'); }
+
+    public function coverageArea () { return $this->hasOne('App\Models\VolunteerCoverage', 'volunteer_id'); }
+
+    public function donations () { return $this->hasMany('App\Models\Donation', 'volunteer_id'); }
+
 }

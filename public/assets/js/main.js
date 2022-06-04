@@ -607,14 +607,14 @@ console.log('%c Proudly Crafted with ZiOn.', 'background: #222; color: #bada55')
         google.maps.event.addDomListener(window, 'load', init);
 
         var mkr = new google.maps.LatLng(3.9743, 102.4381);
-        var cntr = (mobileTest) ? mkr : new google.maps.LatLng(3.9743, 102.4381);
+        var cntr = (mobileTest) ? mkr : new google.maps.LatLng(5.179770802999235, 108.31789366338577);
 
         function init() {
             // Basic options for a simple Google Map
             // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
             var mapOptions = {
                 // How zoomed in you want the map to start at (always required)
-                zoom: 7,
+                zoom: 6,
                 scrollwheel: false,
                 // The latitude and longitude to center the map (always required)
                 center: cntr, // New York
@@ -826,23 +826,22 @@ console.log('%c Proudly Crafted with ZiOn.', 'background: #222; color: #bada55')
 
             // Create the Google Map using our element and options defined above
             var map = new google.maps.Map(mapElement, mapOptions);
+            var infoWindow = new google.maps.InfoWindow();
 
-            // Let's also add a marker while we're at it
-            // var image = new google.maps.MarkerImage('assets/images/map-icon.png',
-            //     new google.maps.Size(59, 65),
-            //     new google.maps.Point(0, 0),
-            //     new google.maps.Point(24, 42)
-            // );
+            for (var key in state_count) {
+                
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(state_count[key]['lat'], state_count[key]['lng']),
+                    map: map,
+                    title: state_count[key]['total'] + ' Volunteers in ' + key.charAt(0).toUpperCase() + key.slice(1)
+                });
 
-            // var marker = new google.maps.Marker({
-            //     position: mkr,
-            //     icon: image,
-            //     title: 'Titan',
-            //     infoWindow: {
-            //         content: '<p><strong>Rival</strong><br/>121 Somewhere Ave, Suite 123<br/>P: (123) 456-7890<br/>Australia</p>'
-            //     },
-            //     map: map,
-            // });
+                google.maps.event.addListener(marker, 'click', function () {
+                    infoWindow.setContent('<h5>' + this.title + ' </h5>');
+                    infoWindow.open(map, this);
+                });
+            }
+
         }
 
     });

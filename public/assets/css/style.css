@@ -8,7 +8,9 @@ html {
 }
 
 body {
-  background: white;
+  background-image: url("/assets/images/paw-background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   font: 400 15px/1.8 "Open Sans", sans-serif;
   color: rgb(0, 0, 0);
   -webkit-font-smoothing: antialiased;
@@ -1301,8 +1303,9 @@ General Styles - Owlcarousel
   border-bottom: 1px solid rgba(73, 71, 71, 0.15) !important;
   padding: 11px 15px;
   letter-spacing: 2px;
-  color: #999;
+  color: #22bbf5;
   font-size: 16px;
+  background-color: white;
 }
 
 .navbar-custom .dropdown-menu .dropdown-menu {
@@ -1894,13 +1897,16 @@ Google map
 }
 
 .works-grid.works-grid-gut .work-item {
-  padding: 0 0 10px 10px;
+  padding: 10px 10px 10px 10px;
 }
 
 .work-item {
   width: 50%;
   float: left;
   margin: 0;
+  border-left: beige 1px solid;
+  border-right: beige 1px solid;
+  border-top: beige 1px solid;
 }
 
 .works-grid-3 .work-item {
@@ -2189,8 +2195,8 @@ Google map
 }
 
 .post-meta {
-  font-size: 11px;
-  color: #aaa;
+  font-size: 12px;
+  color: black;
 }
 
 .post-entry {
@@ -2420,7 +2426,7 @@ Google map
 
 .widget-posts-image {
   float: left;
-  width: 64px;
+  width: 100px;
 }
 
 .widget-posts-body {
@@ -2994,7 +3000,7 @@ Google map
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
-  background-color: #ffeff4;
+  background-color: white;
   margin: 20px;
 }
 .form-center {
@@ -3012,9 +3018,10 @@ left: 50%;
   align-items: center;
   justify-content: center;
   background-color: #fde42f;
-  background-image: url("/assets/images/3.png");
+  background-image: url("/assets/images/auth-bg.png");
   background-size: cover;
   background-repeat: no-repeat;
+  padding-top: 120px;
 }
 .child {
   width: 500px;
@@ -3028,6 +3035,103 @@ left: 50%;
 .btn.btn-login {
   border-radius: 2px;
   width: 100%;
-  background: #ffb6b6;
+  background: #f76161;
   color: #fff;
+}
+
+.role-label {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 11px;
+  font-weight: normal;
+}
+
+.disable-select {
+  user-select: none; /* supported by Chrome and Opera */
+ -webkit-user-select: none; /* Safari */
+ -khtml-user-select: none; /* Konqueror HTML */
+ -moz-user-select: none; /* Firefox */
+ -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+.module-profile{
+  position: relative;
+  padding: 20px ;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-color: #fde42f;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+
+.module-edit-profile{
+  position: relative;
+  padding: 20px ;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-color: #fde42f;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+.module-update-adoption-profile {
+  position: relative;
+  padding: 20px ;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-color: #fde42f;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+}
+
+.module-view-follow-up {
+  position: relative;
+  padding: 20px ;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-color: #fde42f;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.module-update-coverage-area {
+  position: relative;
+  padding: 20px ;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-color: #fde42f;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.module-volunteer-registration {
+  position: relative;
+  padding: 20px ;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-color: #fde42f;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+
+.pet-profile {
+  padding: 20px 30px;
+  background-color: white;
 }

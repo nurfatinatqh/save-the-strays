@@ -61,17 +61,12 @@
       <nav class="navbar navbar-custom navbar-fixed-top navbar-transparent" role="navigation">
         <div class="container">
           <div class="navbar-header">
-            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse">
+              <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span>
+              <span class="icon-bar"></span><span class="icon-bar"></span>
+            </button>
           </div>
-          <div class="collapse navbar-collapse" id="custom-collapse">
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="#totop">Home</a></li>
-              <li><a class="section-scroll" href="#services">Hello Pet</a></li>
-              <li><a class="section-scroll" href="#works">Amazing Tips</a></li>
-              <li><a class="section-scroll" href="#alt-features">Volunteer</a></li>
-              <li><a class="section-scroll" href="#team">Medical Fund</a></li>
-            </ul>
-          </div>
+          @include('components.navbar')
         </div>
       </nav>
       @yield('content')
@@ -96,5 +91,6 @@
     <script src="{{asset('assets/lib/simple-text-rotator/jquery.simple-text-rotator.min.js')}}"></script>
     <script src="{{asset('assets/js/plugins.js')}}"></script>
     <script src="{{asset('assets/js/main.js')}}"></script>
+    <script src="{{ mix('/js/app.js') }}"></script>
   </body>
 </html>

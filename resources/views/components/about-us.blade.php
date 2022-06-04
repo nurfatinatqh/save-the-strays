@@ -14,28 +14,28 @@
             <div class="col-sm-6 col-md-3 col-lg-3">
               <div class="count-item mb-sm-40">
                 <div class="count-icon"><span class="icon-wallet"></span></div>
-                <h3 class="count-to font-alt" data-countto="6543"></h3>
+                <h3 class="count-to font-alt" data-countto="0"></h3>
                 <h5 class="count-title font-serif">Money raised for medical fund</h5>
               </div>
             </div>
             <div class="col-sm-6 col-md-3 col-lg-3">
               <div class="count-item mb-sm-40">
                 <div class="count-icon"><span class="icon-profile-male"></span></div>
-                <h3 class="count-to font-alt" data-countto="8"></h3>
+                <h3 class="count-to font-alt" data-countto="{{count($adopter)}}"></h3>
                 <h5 class="count-title font-serif">Registered adopter</h5>
               </div>
             </div>
             <div class="col-sm-6 col-md-3 col-lg-3">
               <div class="count-item mb-sm-40">
                 <div class="count-icon"><span class="icon-happy"></span></div>
-                <h3 class="count-to font-alt" data-countto="184"></h3>
+                <h3 class="count-to font-alt" data-countto="{{count($happy)}}"></h3>
                 <h5 class="count-title font-serif">Happy pets</h5>
               </div>
             </div>
             <div class="col-sm-6 col-md-3 col-lg-3">
               <div class="count-item mb-sm-40">
                 <div class="count-icon"><span class="icon-sad"></span></div>
-                <h3 class="count-to font-alt" data-countto="32"></h3>
+                <h3 class="count-to font-alt" data-countto="{{count($sad)}}"></h3>
                 <h5 class="count-title font-serif">Homeless pets</h5>
               </div>
             </div>

@@ -141,15 +141,15 @@
         @endif
       
       <br><br>
+      <form action="{{route('add.donor', $donation)}}" method="get">
+        <button style="float: right; width: 180px" type="submit" class="btn btn-info btn-round">ADD DONOR</button>
+      </form>
       @if (count($donation->donors) == 0)
         <hr>
         <div class="align-center">No Donor Yet</div>
         <hr>
       @else
         <br><br>
-        <form action="{{route('add.donor', $donation)}}" method="get">
-            <button style="float: right; width: 180px" type="submit" class="btn btn-info btn-round">ADD DONOR</button>
-        </form>
         <br><br>
         <table style="width: 100%">
             <tr style="border: 1px solid;  padding:10px; background-color:coral; color:white">

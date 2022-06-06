@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Donation;
 use App\Models\Pet;
 use App\Models\User;
 use App\Models\VolunteerCoverage;
@@ -25,6 +26,7 @@ Route::get('/', function () {
     $adopter = User::whereRole('ADOPTER')->get();
     $coverageAreas = VolunteerCoverage::all();
     $coverage_list = $state_count = array();
+    $funds = Donation::whereStatus('ongoing')->get();
 
     foreach($coverageAreas as $temp) {
         if (array_key_exists($temp->district, $coverage_list)) {
@@ -59,7 +61,7 @@ Route::get('/', function () {
         }
     }
 
-    return view('index', compact('happy', 'sad', 'adopter', 'coverage_list', 'state_count'));
+    return view('index', compact('happy', 'sad', 'adopter', 'coverage_list', 'state_count', 'funds'));
 })->name('home');
 
 Route::get('/pet-care-and-health-tips-page', function () {

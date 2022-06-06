@@ -14,8 +14,8 @@
             <div class="col-sm-6 col-md-3 col-lg-3">
               <div class="count-item mb-sm-40">
                 <div class="count-icon"><span class="icon-wallet"></span></div>
-                <h3 class="count-to font-alt" data-countto="0"></h3>
-                <h5 class="count-title font-serif">Money raised for medical fund</h5>
+                <h3 class="count-to font-alt" data-countto="{{count($funds)}}"></h3>
+                <h5 class="count-title font-serif">Active Funds</h5>
               </div>
             </div>
             <div class="col-sm-6 col-md-3 col-lg-3">

@@ -37,7 +37,7 @@ return [
         'smtp' => [
             'transport' => 'smtp',
             'host' => 'smtp.gmail.com',
-            'port' => 465,
+            'port' => 587,
             'encryption' => 'tls',
             'username' => 'savethestrays.malaysia@gmail.com',
             'password' => 'jpgzyhylymrmbpzy',

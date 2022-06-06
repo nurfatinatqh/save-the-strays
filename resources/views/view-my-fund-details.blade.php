@@ -112,31 +112,34 @@
                 <br>
             </div>
         </div><br><br>
-      <div style="text-align: center"><hr><b>CASE OUTCOME</b><hr><br></div>
-      <div class="row">
-        <div class="col-sm-3"></div>
-            <div style="padding: 10px; height:350px; text-align:right;" class="col-sm-3">
-                @php
-                $url = Storage::disk('s3')->temporaryUrl(
-                    $donation->updated_condition,
-                    now()->addMinutes(10)
-                );
-                @endphp
-                <img style="max-width: 100%; max-height:100%" src="{{$url}}" />
-                {{-- <img style="height: auto" src="{{ url($donation->updated_condition) }}" /> --}}
-            </div>
-            <div style="padding: 10px; height:350px; text-align:left;" class="col-sm-3">
-                @php
-                $url = Storage::disk('s3')->temporaryUrl(
-                    $donation->receipt,
-                    now()->addMinutes(10)
-                );
-                @endphp
-                <img style="max-width: 100%; max-height:100%; border: 1px solid beige;" src="{{$url}}" />
-                {{-- <img style="height: auto" src="{{ url($donation->receipt) }}" /> --}}
-            </div>
-            <div class="col-sm-3"></div>
-      </div>
+        @if ($donation->status == "complete")
+        <div style="text-align: center"><hr><b>CASE OUTCOME</b><hr><br></div>
+        <div class="row">
+          <div class="col-sm-3"></div>
+              <div style="padding: 10px; height:350px; text-align:right;" class="col-sm-3">
+                  @php
+                  $url = Storage::disk('s3')->temporaryUrl(
+                      $donation->updated_condition,
+                      now()->addMinutes(10)
+                  );
+                  @endphp
+                  <img style="max-width: 100%; max-height:100%" src="{{$url}}" />
+                  {{-- <img style="height: auto" src="{{ url($donation->updated_condition) }}" /> --}}
+              </div>
+              <div style="padding: 10px; height:350px; text-align:left;" class="col-sm-3">
+                  @php
+                  $url = Storage::disk('s3')->temporaryUrl(
+                      $donation->receipt,
+                      now()->addMinutes(10)
+                  );
+                  @endphp
+                  <img style="max-width: 100%; max-height:100%; border: 1px solid beige;" src="{{$url}}" />
+                  {{-- <img style="height: auto" src="{{ url($donation->receipt) }}" /> --}}
+              </div>
+              <div class="col-sm-3"></div>
+        </div>
+        @endif
+      
       <br><br>
       @if (count($donation->donors) == 0)
         <hr>

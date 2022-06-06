@@ -10,4 +10,9 @@
   </div>
   @include('components.footer')
 
+  <script>
+    var coverage_list = @json($coverage_list);
+    var state_count = @json($state_count);
+  </script>
+
 @endsection

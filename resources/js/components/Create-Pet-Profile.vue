@@ -3,7 +3,7 @@
         <table style="border: 1px solid; width: 100%">
             <tr>
                 <td style="border: 1px solid; padding: 10px;"><label for="username">NAME </label></td>
-                <td style="border: 1px solid; padding: 10px;"><input @keydown.space="(event) => event.preventDefault()" :maxlength=30 style="width: 100%" type="text" id="name" name="name" required></td>
+                <td style="border: 1px solid; padding: 10px;"><input @keydown.space="(event) => event.preventDefault()" :maxlength=100 style="width: 100%" type="text" id="name" name="name" required></td>
             </tr>
             <tr>
                 <td style="border: 1px solid; padding: 10px;"><label>PET TYPE &nbsp;&nbsp;</label></td>
@@ -39,7 +39,7 @@
             </tr>
             <tr>
                 <td style="border: 1px solid; padding: 10px;"><label for="username">HEALTH CONDITION </label></td>
-                <td style="border: 1px solid; padding: 10px;"><input :maxlength=30 style="width: 100%" type="text" id="health_condition" name="health_condition" required></td>
+                <td style="border: 1px solid; padding: 10px;"><input :maxlength=100 style="width: 100%" type="text" id="health_condition" name="health_condition" required></td>
             </tr>
             <tr>
                 <td style="border: 1px solid; padding: 10px;"><label for="address">LOCATION </label></td>

@@ -21,58 +21,71 @@
           <div class="tab-pane active" id="ongoing">
             @foreach ($ongoing_list as $ongoing_donation)
               <div class="row">
-                  <div style="padding: 10px;" class="col-sm-4">
+                  <div style="padding: 10px; height:250px; text-align: right;" class="col-sm-3">
                       @php
                         $url = Storage::disk('s3')->temporaryUrl(
                           $ongoing_donation->pet_picture,
                           now()->addMinutes(10)
                         );
                       @endphp
-                      {{-- <img width="auto" src="{{ url($ongoing_donation->pet_picture) }}" /> --}}
-                      <img width="auto" src="{{$url}}" />
+                      {{-- <img style="max-width: 100%; max-height:100%" src="{{ url($ongoing_donation->pet_picture) }}" /> --}}
+                      <img style="max-width: 100%; max-height:100%" src="{{$url}}" />
                   </div>
-                  <div style="padding: 10px;" class="col-sm-2">
+                  <div style="padding: 10px; height:250px; text-align: left;" class="col-sm-3">
                       @php
                         $url = Storage::disk('s3')->temporaryUrl(
                           $ongoing_donation->vet_analysis,
                           now()->addMinutes(10)
                         );
                       @endphp
-                      <img style="height: auto" src="{{$url}}" />
-                      {{-- <img style="height: auto" src="{{ url($ongoing_donation->vet_analysis) }}" /> --}}
+                      <img style="max-width: 100%; max-height:100%" src="{{$url}}" />
+                      {{-- <img style="padding: 10px; height:250px;" src="{{ url($ongoing_donation->vet_analysis) }}" /> --}}
                   </div>
                   <div style="padding: 15px;" class="col-sm-6">
                       <table>
                           <tr>
-                              <td>Pet Name: </td>
+                              <td>Pet Name</td>
+                              <td>&nbsp;&nbsp;:&nbsp;&nbsp; </td>
                               <td>{{$ongoing_donation->pet_name}}</td>
                           </tr>
                           <tr>
-                              <td>Health Condition: </td>
+                              <td>Health Condition</td>
+                              <td>&nbsp;&nbsp;:&nbsp;&nbsp; </td>
                               <td>{{$ongoing_donation->health_condition}}</td>
                           </tr>
-                          <tr>
-                              <td>Phone No: </td>
+                          @if ($ongoing_donation->phone_number != null)
+                            <tr>
+                              <td>Phone No</td>
+                              <td>&nbsp;&nbsp;:&nbsp;&nbsp; </td>
                               <td>{{$ongoing_donation->phone_number}}</td>
-                          </tr>
-                          <tr>
-                              <td>Email: </td>
+                            </tr>
+                          @endif
+                          @if ($ongoing_donation->email != null)
+                            <tr>
+                              <td>Email</td>
+                              <td>&nbsp;&nbsp;:&nbsp;&nbsp; </td>
                               <td>{{$ongoing_donation->email}}</td>
-                          </tr>
+                            </tr>   
+                          @endif
+                        
                           <tr>
-                              <td>Bank: </td>
+                              <td>Bank</td>
+                              <td>&nbsp;&nbsp;:&nbsp;&nbsp; </td>
                               <td>{{$ongoing_donation->bank}}</td>
                           </tr>
                           <tr>
-                              <td>Bank No: </td>
+                              <td>Bank No</td>
+                              <td>&nbsp;&nbsp;:&nbsp;&nbsp; </td>
                               <td>{{$ongoing_donation->bank_no}}</td>
                           </tr>
                           <tr>
-                              <td>Bank Reference: </td>
+                              <td>Bank Reference</td>
+                              <td>&nbsp;&nbsp;:&nbsp;&nbsp; </td>
                               <td>{{$ongoing_donation->bank_owner_name}}</td>
                           </tr>
                           <tr>
-                              <td style="width: 30%">Latest Amount: </td>
+                              <td style="width: 30%">Latest Amount</td>
+                              <td>&nbsp;&nbsp;:&nbsp;&nbsp; </td>
                               <td>RM{{$ongoing_donation->current_amount}} / RM{{$ongoing_donation->expected_amount}}</td>
                           </tr>
                       </table>
@@ -80,7 +93,7 @@
                       @if (Auth::check())
                         @if (Auth::user()->role == "VOLUNTEER")
                             <form action="{{route('my.medical.fund.details', $ongoing_donation)}}" method="get">
-                                <button style="float: right; width: 180px" type="submit" class="btn btn-success btn-round">VIEW DONORS</button>
+                                <button style="float: right; width: 180px" type="submit" class="btn btn-success btn-round">VIEW CASE</button>
                             </form>
                         @endif
                       @endif
@@ -92,58 +105,70 @@
           <div class="tab-pane" id="complete">
             @foreach ($complete_list as $complete_donation)
               <div class="row">
-                  <div style="padding: 10px;" class="col-sm-4">
+                  <div style="padding: 10px; height:250px; text-align: right;" class="col-sm-3">
                       @php
                         $url = Storage::disk('s3')->temporaryUrl(
-                          $complete_donation->pet_picture,
+                          $complete_donation->updated_condition,
                           now()->addMinutes(10)
                         );
                       @endphp
-                      {{-- <img width="auto" src="{{ url($complete_donation->pet_picture) }}" /> --}}
-                      <img width="auto" src="{{$url}}" />
+                      {{-- <img style="max-width: 100%; max-height:100%" src="{{ url($complete_donation->pet_picture) }}" /> --}}
+                      <img style="max-width: 100%; max-height:100%" src="{{$url}}" />
                   </div>
-                  <div style="padding: 10px;" class="col-sm-2">
+                  <div style="padding: 10px; height:250px; text-align: left;" class="col-sm-3">
                       @php
                         $url = Storage::disk('s3')->temporaryUrl(
-                          $complete_donation->vet_analysis,
+                          $complete_donation->receipt,
                           now()->addMinutes(10)
                         );
                       @endphp
-                      <img style="height: auto" src="{{$url}}" />
-                      {{-- <img style="height: auto" src="{{ url($complete_donation->vet_analysis) }}" /> --}}
+                      <img style="padding: 10px; height:250px;" src="{{$url}}" />
+                      {{-- <img style="padding: 10px; height:250px;" src="{{ url($complete_donation->vet_analysis) }}" /> --}}
                   </div>
                   <div style="padding: 15px;" class="col-sm-6">
                       <table>
                           <tr>
-                              <td>Pet Name: </td>
+                              <td>Pet Name</td>
+                              <td>&nbsp;&nbsp;:&nbsp;&nbsp; </td>
                               <td>{{$complete_donation->pet_name}}</td>
                           </tr>
                           <tr>
-                              <td>Health Condition: </td>
+                              <td>Health Condition</td>
+                              <td>&nbsp;&nbsp;:&nbsp;&nbsp; </td>
                               <td>{{$complete_donation->health_condition}}</td>
                           </tr>
-                          <tr>
-                              <td>Phone No: </td>
+                          @if ($complete_donation->phone_number != null)
+                            <tr>
+                              <td>Phone No</td>
+                              <td>&nbsp;&nbsp;:&nbsp;&nbsp; </td>
                               <td>{{$complete_donation->phone_number}}</td>
-                          </tr>
-                          <tr>
-                              <td>Email: </td>
+                            </tr>
+                          @endif
+                          @if ($complete_donation->email != null)
+                            <tr>
+                              <td>Email</td>
+                              <td>&nbsp;&nbsp;:&nbsp;&nbsp; </td>
                               <td>{{$complete_donation->email}}</td>
-                          </tr>
+                            </tr>   
+                          @endif
                           <tr>
-                              <td>Bank: </td>
+                              <td>Bank</td>
+                              <td>&nbsp;&nbsp;:&nbsp;&nbsp; </td>
                               <td>{{$complete_donation->bank}}</td>
                           </tr>
                           <tr>
-                              <td>Bank No: </td>
+                              <td>Bank No</td>
+                              <td>&nbsp;&nbsp;:&nbsp;&nbsp; </td>
                               <td>{{$complete_donation->bank_no}}</td>
                           </tr>
                           <tr>
-                              <td>Bank Reference: </td>
+                              <td>Bank Reference</td>
+                              <td>&nbsp;&nbsp;:&nbsp;&nbsp; </td>
                               <td>{{$complete_donation->bank_owner_name}}</td>
                           </tr>
                           <tr>
-                              <td style="width: 30%">Latest Amount: </td>
+                              <td style="width: 30%">Latest Amount</td>
+                              <td>&nbsp;&nbsp;:&nbsp;&nbsp; </td>
                               <td>RM{{$complete_donation->current_amount}} / RM{{$complete_donation->expected_amount}}</td>
                           </tr>
                       </table>
@@ -151,7 +176,7 @@
                       @if (Auth::check())
                         @if (Auth::user()->role == "VOLUNTEER")
                             <form action="{{route('my.medical.fund.details', $complete_donation)}}" method="get">
-                                <button style="float: right; width: 180px" type="submit" class="btn btn-success btn-round">VIEW DONORS</button>
+                                <button style="float: right; width: 180px" type="submit" class="btn btn-success btn-round">VIEW CASE</button>
                             </form>
                         @endif
                       @endif

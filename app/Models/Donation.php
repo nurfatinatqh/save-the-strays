@@ -12,6 +12,7 @@ class Donation extends Model
     protected $fillable = [
         'pet_name',
         'health_condition',
+        'contact_info',
         'phone_number',
         'email',
         'bank',

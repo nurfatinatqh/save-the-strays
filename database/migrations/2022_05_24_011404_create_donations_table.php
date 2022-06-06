@@ -19,8 +19,9 @@ class CreateDonationsTable extends Migration
             $table->foreign('volunteer_id')->references('id')->on('users');
             $table->string('pet_name');
             $table->text('health_condition');
-            $table->string('phone_number');
-            $table->string('email');
+            $table->text('contact_info');
+            $table->string('phone_number')->nullable();
+            $table->string('email')->nullable();
             $table->string('bank');
             $table->string('bank_no');
             $table->string('bank_owner_name');

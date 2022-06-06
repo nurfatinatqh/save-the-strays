@@ -49,6 +49,7 @@ Vue.component('pet-profile-component', require('./components/Pet-Profile.vue').d
 Vue.component('update-coverage-area-component', require('./components/Update-Coverage-Area-Component.vue').default);
 Vue.component('volunteer-registration-component', require('./components/Volunteer-Registration.vue').default);
 Vue.component('new-medical-fund-component', require('./components/Start-New-Medical-Fund.vue').default);
+Vue.component('update-medical-fund-info-component', require('./components/Update-Medical-Fund-Info.vue').default);
 
 
 Vue.component('count-box', {

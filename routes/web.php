@@ -60,18 +60,22 @@ Route::middleware('auth')->group(function() {
     Route::get('/medical-fund/{id}/donor-list', 'App\Http\Controllers\DonationController@fetchViewDonorsPage')->name('view.donors');
     Route::get('/medical-fund/{id}/my-list', 'App\Http\Controllers\DonationController@fetchMyMedicalFundPage')->name('my.medical.fund');
     Route::get('/medical-fund/{id}/my-list/view-details', 'App\Http\Controllers\DonationController@fetchMyMedicalFundDetailsPage')->name('my.medical.fund.details');
+    Route::get('/medical-fund/{id}/my-list/view-details/get-update-form', 'App\Http\Controllers\DonationController@fetchUpdateFundInfoForm')->name('get.update.form');
+    Route::put('/medical-fund/{id}/my-list/view-details/update-info', 'App\Http\Controllers\DonationController@updateFundInfo')->name('update.fund.info');
+    Route::get('/medical-fund/{id}/my-list/view-details/get-update-case-form', 'App\Http\Controllers\DonationController@fetchUpdateCaseForm')->name('get.update.case.form');
+    Route::put('/medical-fund/{id}/my-list/view-details/update-case', 'App\Http\Controllers\DonationController@updateCase')->name('update.fund.case');
 });
 
-Route::get('/url', function(Request $request) {
-    $path = $request->url;
+// Route::get('/url', function(Request $request) {
+//     $path = $request->url;
 
-    $url = Storage::disk('s3')->temporaryUrl(
-        $path,
-        now()->addMinutes(10)
-    );
+//     $url = Storage::disk('s3')->temporaryUrl(
+//         $path,
+//         now()->addMinutes(10)
+//     );
 
-    return $url;
-});
+//     return $url;
+// });
 
 Route::get('/dashboard', function () {
     return view('dashboard');

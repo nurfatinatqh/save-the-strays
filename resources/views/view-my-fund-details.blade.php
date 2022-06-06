@@ -14,97 +14,140 @@
       <br><br>
       <hr>
         <div class="row">
-            <div style="padding: 10px;" class="col-sm-4">
+            <div class="col-sm-6" style="text-align: center"><b>CASE ANALYSIS</b></div>
+            <div class="col-sm-6" style="text-align: center"><b>CASE INFORMATION</b></div>
+        </div><hr>
+        <div class="row">
+            <div style="padding: 10px; height:350px; text-align:center;" class="col-sm-3">
                 @php
                 $url = Storage::disk('s3')->temporaryUrl(
                     $donation->pet_picture,
                     now()->addMinutes(10)
                 );
                 @endphp
-                <img width="auto" src="{{$url}}" />
+                <img style="max-width: 100%; max-height:100%" src="{{$url}}" />
                 {{-- <img width="auto" src="{{ url($donation->pet_picture) }}" /> --}}
             </div>
-            <div style="padding: 10px;" class="col-sm-2">
+            <div style="padding: 10px; height:350px; text-align:center;" class="col-sm-3">
                 @php
                 $url = Storage::disk('s3')->temporaryUrl(
                     $donation->vet_analysis,
                     now()->addMinutes(10)
                 );
                 @endphp
-                <img style="height: auto" src="{{$url}}" />
+                <img style="height: 350px" style="max-width: 100%; max-height:100%;  border: 1px solid beige;" src="{{$url}}" />
                 {{-- <img style="height: auto" src="{{ url($donation->vet_analysis) }}" /> --}}
             </div>
-            <div style="padding: 15px;" class="col-sm-6">
-                <table>
-                    <tr>
-                        <td>Pet Name: </td>
-                        <td>{{$donation->pet_name}}</td>
-                    </tr>
-                    <tr>
-                        <td>Health Condition: </td>
-                        <td>{{$donation->health_condition}}</td>
-                    </tr>
-                    <tr>
-                        <td>Phone No: </td>
-                        <td>{{$donation->phone_number}}</td>
-                    </tr>
-                    <tr>
-                        <td>Email: </td>
-                        <td>{{$donation->email}}</td>
-                    </tr>
-                    <tr>
-                        <td>Bank: </td>
-                        <td>{{$donation->bank}}</td>
-                    </tr>
-                    <tr>
-                        <td>Bank No: </td>
-                        <td>{{$donation->bank_no}}</td>
-                    </tr>
-                    <tr>
-                        <td>Bank Reference: </td>
-                        <td>{{$donation->bank_owner_name}}</td>
-                    </tr>
-                    <tr>
-                        <td style="width: 30%">Latest Amount: </td>
-                        <td>RM{{$donation->current_amount}} / RM{{$donation->expected_amount}}</td>
-                    </tr>
-                </table>
-                <br>
-                @if (Auth::check())
-                    @if (Auth::user()->role == "VOLUNTEER")
-                        <table style="float: right; width: 65%">
+            <div class="col-sm-6" style="padding: 15px;" >
+                <div>
+                    <table>
+                        <tr>
+                            <td>Pet Name</td>
+                            <td>&nbsp;&nbsp;:&nbsp;&nbsp; </td>
+                            <td>{{$donation->pet_name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Health Condition</td>
+                            <td>&nbsp;&nbsp;:&nbsp;&nbsp; </td>
+                            <td>{{$donation->health_condition}}</td>
+                        </tr>
+                        @if ($donation->phone_number != null)
                             <tr>
-                                <td>
-                                    <form action="{{route('add.donor', $donation)}}" method="get">
-                                        <button style="float: right; width: 180px" type="submit" class="btn btn-info btn-round">ADD DONOR</button>
-                                    </form>
-                                </td>
-                                <td>
-                                    <form action="" method="get">
-                                        <button style="float: right; width: 180px" type="submit" class="btn btn-success btn-round">UPDATE INFO</button>
-                                    </form>
-                                </td>
+                                <td>Phone No</td>
+                                <td>&nbsp;&nbsp;:&nbsp;&nbsp; </td>
+                                <td>{{$donation->phone_number}}</td>
                             </tr>
-                        </table>
-                    @else
-                        <form action="" method="get">
-                            <button style="float: right; width: 180px" type="submit" class="btn btn-success btn-round">VIEW DONORS</button>
-                        </form>
+                        @endif
+                        @if ($donation->email != null)
+                            <tr>
+                                <td>Email</td>
+                                <td>&nbsp;&nbsp;:&nbsp;&nbsp; </td>
+                                <td>{{$donation->email}}</td>
+                            </tr>
+                        @endif
+                        <tr>
+                            <td>Bank</td>
+                            <td>&nbsp;&nbsp;:&nbsp;&nbsp; </td>
+                            <td>{{$donation->bank}}</td>
+                        </tr>
+                        <tr>
+                            <td>Bank No</td>
+                            <td>&nbsp;&nbsp;:&nbsp;&nbsp; </td>
+                            <td>{{$donation->bank_no}}</td>
+                        </tr>
+                        <tr>
+                            <td>Bank Reference</td>
+                            <td>&nbsp;&nbsp;:&nbsp;&nbsp; </td>
+                            <td>{{$donation->bank_owner_name}}</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 30%">Latest Amount</td>
+                            <td>&nbsp;&nbsp;:&nbsp;&nbsp; </td>
+                            <td>RM{{$donation->current_amount}} / RM{{$donation->expected_amount}}</td>
+                        </tr>
+                    </table>
+                    <br>
+                    @if (Auth::check())
+                        @if (Auth::user()->id == $donation->volunteer_id)
+                            <table style="width: 100%; float: center;">
+                                <tr>
+                                    @if ($donation->status != "complete")
+                                        <td>
+                                            <form action="{{route('get.update.form', $donation->id)}}" method="get">
+                                                <button style="float: right; width: 180px" type="submit" class="btn btn-success btn-round">UPDATE INFO</button>
+                                            </form>
+                                        </td>
+                                    @else
+                                        <td>
+                                            <form action="{{route('get.update.case.form', $donation->id)}}" method="get">
+                                                <button style="float: right; width: 180px" type="submit" class="btn btn-success btn-round">UPDATE CASE</button>
+                                            </form>
+                                        </td>
+                                    @endif
+                                </tr>
+                            </table>
+                        @endif
                     @endif
-                @else
-                    <form action="" method="get">
-                        <button style="float: right; width: 180px" type="submit" class="btn btn-success btn-round">VIEW DONORS</button>
-                    </form>
-                @endif
-                
-                
+                </div>
+                <br>
             </div>
-        </div>
-      <hr>
+        </div><br><br>
+      <div style="text-align: center"><hr><b>CASE OUTCOME</b><hr><br></div>
+      <div class="row">
+        <div class="col-sm-3"></div>
+            <div style="padding: 10px; height:350px; text-align:right;" class="col-sm-3">
+                @php
+                $url = Storage::disk('s3')->temporaryUrl(
+                    $donation->updated_condition,
+                    now()->addMinutes(10)
+                );
+                @endphp
+                <img style="max-width: 100%; max-height:100%" src="{{$url}}" />
+                {{-- <img style="height: auto" src="{{ url($donation->updated_condition) }}" /> --}}
+            </div>
+            <div style="padding: 10px; height:350px; text-align:left;" class="col-sm-3">
+                @php
+                $url = Storage::disk('s3')->temporaryUrl(
+                    $donation->receipt,
+                    now()->addMinutes(10)
+                );
+                @endphp
+                <img style="max-width: 100%; max-height:100%; border: 1px solid beige;" src="{{$url}}" />
+                {{-- <img style="height: auto" src="{{ url($donation->receipt) }}" /> --}}
+            </div>
+            <div class="col-sm-3"></div>
+      </div>
+      <br><br>
       @if (count($donation->donors) == 0)
-            <div class="align-center">No Donor Yet</div>
-            <hr>
+        <hr>
+        <div class="align-center">No Donor Yet</div>
+        <hr>
       @else
+        <br><br>
+        <form action="{{route('add.donor', $donation)}}" method="get">
+            <button style="float: right; width: 180px" type="submit" class="btn btn-info btn-round">ADD DONOR</button>
+        </form>
+        <br><br>
         <table style="width: 100%">
             <tr style="border: 1px solid;  padding:10px; background-color:coral; color:white">
                 <th>&nbsp;<br><br></th>

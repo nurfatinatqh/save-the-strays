@@ -6198,7 +6198,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      contact: null
+    };
+  },
   methods: {
     displayError: function displayError() {
       if (errors.length > 0) {
@@ -6333,6 +6348,139 @@ __webpack_require__.r(__webpack_exports__);
           _this.districts = temp.district;
         }
       });
+    },
+    NumbersOnly: function NumbersOnly(evt) {
+      evt = evt ? evt : window.event;
+      var charCode = evt.which ? evt.which : evt.keyCode;
+
+      if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode !== 46) {
+        evt.preventDefault();
+        ;
+      } else {
+        return true;
+      }
+    }
+  },
+  mounted: function mounted() {
+    this.displayError();
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Update-Medical-Fund-Info.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Update-Medical-Fund-Info.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      donation: donation,
+      contact: donation['contact_info']
+    };
+  },
+  methods: {
+    displayError: function displayError() {
+      if (errors.length > 0) {
+        alert("UPDATE FAIL NOTICE\n\n" + errors.map(function (i, key) {
+          return "".concat(key + 1, ". ").concat(i);
+        }).join('\n'));
+      }
     },
     NumbersOnly: function NumbersOnly(evt) {
       evt = evt ? evt : window.event;
@@ -6542,6 +6690,7 @@ Vue.component('pet-profile-component', (__webpack_require__(/*! ./components/Pet
 Vue.component('update-coverage-area-component', (__webpack_require__(/*! ./components/Update-Coverage-Area-Component.vue */ "./resources/js/components/Update-Coverage-Area-Component.vue")["default"]));
 Vue.component('volunteer-registration-component', (__webpack_require__(/*! ./components/Volunteer-Registration.vue */ "./resources/js/components/Volunteer-Registration.vue")["default"]));
 Vue.component('new-medical-fund-component', (__webpack_require__(/*! ./components/Start-New-Medical-Fund.vue */ "./resources/js/components/Start-New-Medical-Fund.vue")["default"]));
+Vue.component('update-medical-fund-info-component', (__webpack_require__(/*! ./components/Update-Medical-Fund-Info.vue */ "./resources/js/components/Update-Medical-Fund-Info.vue")["default"]));
 Vue.component('count-box', {
   props: ['count', 'info'],
   template: "\n            <div class=\"container\">\n            <div class=\"row justify-content-center\">\n                <div class=\"col-md-8\">\n                    <div class=\"small-box bg-info\">\n                        <div class=\"inner\">\n                        <h3>{{count}}</h3>\n            \n                        <p>{{info}}</p>\n                        </div>\n                        <div class=\"icon\">\n                        <i class=\"ion ion-bag\"></i>\n                        </div>\n                        <button type=\"button\" @click=\"popup\"> CLICK </button>\n                    </div>\n                    <hr>\n                </div>\n            </div>\n        </div>\n    ",
@@ -30057,6 +30206,45 @@ component.options.__file = "resources/js/components/Update-Coverage-Area-Compone
 
 /***/ }),
 
+/***/ "./resources/js/components/Update-Medical-Fund-Info.vue":
+/*!**************************************************************!*\
+  !*** ./resources/js/components/Update-Medical-Fund-Info.vue ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Update_Medical_Fund_Info_vue_vue_type_template_id_5340da7e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Update-Medical-Fund-Info.vue?vue&type=template&id=5340da7e& */ "./resources/js/components/Update-Medical-Fund-Info.vue?vue&type=template&id=5340da7e&");
+/* harmony import */ var _Update_Medical_Fund_Info_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Update-Medical-Fund-Info.vue?vue&type=script&lang=js& */ "./resources/js/components/Update-Medical-Fund-Info.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Update_Medical_Fund_Info_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Update_Medical_Fund_Info_vue_vue_type_template_id_5340da7e___WEBPACK_IMPORTED_MODULE_0__.render,
+  _Update_Medical_Fund_Info_vue_vue_type_template_id_5340da7e___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Update-Medical-Fund-Info.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/Volunteer-Registration.vue":
 /*!************************************************************!*\
   !*** ./resources/js/components/Volunteer-Registration.vue ***!
@@ -30301,6 +30489,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Update_Coverage_Area_Component_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Update-Coverage-Area-Component.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Update-Coverage-Area-Component.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Update_Coverage_Area_Component_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Update-Medical-Fund-Info.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/Update-Medical-Fund-Info.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Update_Medical_Fund_Info_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Update-Medical-Fund-Info.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Update-Medical-Fund-Info.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Update_Medical_Fund_Info_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -30554,6 +30758,23 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Update-Medical-Fund-Info.vue?vue&type=template&id=5340da7e&":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/components/Update-Medical-Fund-Info.vue?vue&type=template&id=5340da7e& ***!
+  \*********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Update_Medical_Fund_Info_vue_vue_type_template_id_5340da7e___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Update_Medical_Fund_Info_vue_vue_type_template_id_5340da7e___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Update_Medical_Fund_Info_vue_vue_type_template_id_5340da7e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Update-Medical-Fund-Info.vue?vue&type=template&id=5340da7e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Update-Medical-Fund-Info.vue?vue&type=template&id=5340da7e&");
+
+
+/***/ }),
+
 /***/ "./resources/js/components/Volunteer-Registration.vue?vue&type=template&id=313aa067&":
 /*!*******************************************************************************************!*\
   !*** ./resources/js/components/Volunteer-Registration.vue?vue&type=template&id=313aa067& ***!
@@ -30670,7 +30891,7 @@ var render = function () {
           _c("input", {
             staticStyle: { width: "100%" },
             attrs: {
-              maxlength: 30,
+              maxlength: 100,
               type: "text",
               id: "name",
               name: "name",
@@ -30707,7 +30928,7 @@ var render = function () {
           _c("input", {
             staticStyle: { width: "100%" },
             attrs: {
-              maxlength: 30,
+              maxlength: 100,
               type: "text",
               id: "health_condition",
               name: "health_condition",
@@ -32257,58 +32478,114 @@ var render = function () {
         _vm._m(2),
         _vm._v(" "),
         _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
-          _c("input", {
-            staticStyle: { width: "100%" },
-            attrs: {
-              maxlength: 12,
-              minlength: 10,
-              type: "text",
-              id: "phone_number",
-              name: "phone_number",
-              required: "",
-            },
-            on: {
-              keypress: _vm.NumbersOnly,
-              keydown: function ($event) {
-                if (
-                  !$event.type.indexOf("key") &&
-                  _vm._k($event.keyCode, "space", 32, $event.key, [
-                    " ",
-                    "Spacebar",
-                  ])
-                ) {
-                  return null
-                }
-                return function (event) {
-                  return event.preventDefault()
-                }.apply(null, arguments)
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.contact,
+                  expression: "contact",
+                },
+              ],
+              staticStyle: { width: "100%" },
+              attrs: { id: "contact_info", name: "contact_info", required: "" },
+              on: {
+                change: function ($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function (o) {
+                      return o.selected
+                    })
+                    .map(function (o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.contact = $event.target.multiple
+                    ? $$selectedVal
+                    : $$selectedVal[0]
+                },
               },
             },
-          }),
+            [
+              _c("option", [_vm._v(" PHONE NUMBER ")]),
+              _vm._v(" "),
+              _c("option", [_vm._v(" EMAIL ")]),
+              _vm._v(" "),
+              _c("option", [_vm._v(" NONE ")]),
+            ]
+          ),
         ]),
       ]),
       _vm._v(" "),
-      _c("tr", [
-        _vm._m(3),
-        _vm._v(" "),
-        _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
-          _c("input", {
-            staticStyle: { width: "100%" },
-            attrs: {
-              maxlength: 30,
-              type: "email",
-              id: "email",
-              name: "email",
-              required: "",
-            },
-          }),
-        ]),
-      ]),
+      _vm.contact === "PHONE NUMBER"
+        ? _c("tr", [
+            _vm._m(3),
+            _vm._v(" "),
+            _c(
+              "td",
+              { staticStyle: { border: "1px solid", padding: "10px" } },
+              [
+                _c("input", {
+                  staticStyle: { width: "100%" },
+                  attrs: {
+                    maxlength: 12,
+                    minlength: 10,
+                    type: "text",
+                    id: "phone_number",
+                    name: "phone_number",
+                    required: "",
+                  },
+                  on: {
+                    keypress: _vm.NumbersOnly,
+                    keydown: function ($event) {
+                      if (
+                        !$event.type.indexOf("key") &&
+                        _vm._k($event.keyCode, "space", 32, $event.key, [
+                          " ",
+                          "Spacebar",
+                        ])
+                      ) {
+                        return null
+                      }
+                      return function (event) {
+                        return event.preventDefault()
+                      }.apply(null, arguments)
+                    },
+                  },
+                }),
+              ]
+            ),
+          ])
+        : _vm._e(),
       _vm._v(" "),
-      _vm._m(4),
+      _vm.contact === "EMAIL"
+        ? _c("tr", [
+            _vm._m(4),
+            _vm._v(" "),
+            _c(
+              "td",
+              { staticStyle: { border: "1px solid", padding: "10px" } },
+              [
+                _c("input", {
+                  staticStyle: { width: "100%" },
+                  attrs: {
+                    maxlength: 100,
+                    type: "email",
+                    id: "email",
+                    name: "email",
+                    required: "",
+                  },
+                }),
+              ]
+            ),
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm._m(5),
       _vm._v(" "),
       _c("tr", [
-        _vm._m(5),
+        _vm._m(6),
         _vm._v(" "),
         _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
           _c("input", {
@@ -32343,7 +32620,7 @@ var render = function () {
       ]),
       _vm._v(" "),
       _c("tr", [
-        _vm._m(6),
+        _vm._m(7),
         _vm._v(" "),
         _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
           _c("input", {
@@ -32360,7 +32637,7 @@ var render = function () {
       ]),
       _vm._v(" "),
       _c("tr", [
-        _vm._m(7),
+        _vm._m(8),
         _vm._v(" "),
         _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
           _c("input", {
@@ -32378,7 +32655,7 @@ var render = function () {
       ]),
       _vm._v(" "),
       _c("tr", [
-        _vm._m(8),
+        _vm._m(9),
         _vm._v(" "),
         _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
           _c("input", {
@@ -32395,9 +32672,9 @@ var render = function () {
         ]),
       ]),
       _vm._v(" "),
-      _vm._m(9),
-      _vm._v(" "),
       _vm._m(10),
+      _vm._v(" "),
+      _vm._m(11),
     ]),
   ])
 }
@@ -32432,6 +32709,16 @@ var staticRenderFns = [
             required: "",
           },
         }),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
+      _c("label", { attrs: { for: "contact_info" } }, [
+        _vm._v("CONTACT INFO "),
       ]),
     ])
   },
@@ -32791,6 +33078,632 @@ var staticRenderFns = [
     return _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
       _c("label", { attrs: { for: "address" } }, [
         _vm._v("UPDATE NEW LOCATION "),
+      ]),
+    ])
+  },
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Update-Medical-Fund-Info.vue?vue&type=template&id=5340da7e&":
+/*!************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Update-Medical-Fund-Info.vue?vue&type=template&id=5340da7e& ***!
+  \************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("table", { staticStyle: { border: "1px solid", width: "100%" } }, [
+      _c("tr", [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.donation["pet_name"],
+                expression: "donation['pet_name']",
+              },
+            ],
+            staticStyle: { width: "100%" },
+            attrs: {
+              maxlength: 30,
+              type: "text",
+              id: "pet_name",
+              name: "pet_name",
+              required: "",
+            },
+            domProps: { value: _vm.donation["pet_name"] },
+            on: {
+              keydown: function ($event) {
+                if (
+                  !$event.type.indexOf("key") &&
+                  _vm._k($event.keyCode, "space", 32, $event.key, [
+                    " ",
+                    "Spacebar",
+                  ])
+                ) {
+                  return null
+                }
+                return function (event) {
+                  return event.preventDefault()
+                }.apply(null, arguments)
+              },
+              input: function ($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.donation, "pet_name", $event.target.value)
+              },
+            },
+          }),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("tr", [
+        _vm._m(1),
+        _vm._v(" "),
+        _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
+          _c("textarea", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.donation["health_condition"],
+                expression: "donation['health_condition']",
+              },
+            ],
+            staticStyle: { width: "100%" },
+            attrs: {
+              name: "health_condition",
+              id: "health_condition",
+              cols: "30",
+              rows: "3",
+              required: "",
+            },
+            domProps: { value: _vm.donation["health_condition"] },
+            on: {
+              input: function ($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.donation, "health_condition", $event.target.value)
+              },
+            },
+          }),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("tr", [
+        _vm._m(2),
+        _vm._v(" "),
+        _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.contact,
+                  expression: "contact",
+                },
+              ],
+              staticStyle: { width: "100%" },
+              attrs: { id: "contact_info", name: "contact_info", required: "" },
+              on: {
+                change: function ($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function (o) {
+                      return o.selected
+                    })
+                    .map(function (o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.contact = $event.target.multiple
+                    ? $$selectedVal
+                    : $$selectedVal[0]
+                },
+              },
+            },
+            [
+              _c("option", [_vm._v(" PHONE NUMBER ")]),
+              _vm._v(" "),
+              _c("option", [_vm._v(" EMAIL ")]),
+              _vm._v(" "),
+              _c("option", [_vm._v(" NONE ")]),
+            ]
+          ),
+        ]),
+      ]),
+      _vm._v(" "),
+      _vm.contact === "PHONE NUMBER"
+        ? _c("tr", [
+            _vm._m(3),
+            _vm._v(" "),
+            _c(
+              "td",
+              { staticStyle: { border: "1px solid", padding: "10px" } },
+              [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.donation["phone_number"],
+                      expression: "donation['phone_number']",
+                    },
+                  ],
+                  staticStyle: { width: "100%" },
+                  attrs: {
+                    maxlength: 12,
+                    minlength: 10,
+                    type: "text",
+                    id: "phone_number",
+                    name: "phone_number",
+                    required: "",
+                  },
+                  domProps: { value: _vm.donation["phone_number"] },
+                  on: {
+                    keypress: _vm.NumbersOnly,
+                    keydown: function ($event) {
+                      if (
+                        !$event.type.indexOf("key") &&
+                        _vm._k($event.keyCode, "space", 32, $event.key, [
+                          " ",
+                          "Spacebar",
+                        ])
+                      ) {
+                        return null
+                      }
+                      return function (event) {
+                        return event.preventDefault()
+                      }.apply(null, arguments)
+                    },
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(
+                        _vm.donation,
+                        "phone_number",
+                        $event.target.value
+                      )
+                    },
+                  },
+                }),
+              ]
+            ),
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.contact === "EMAIL"
+        ? _c("tr", [
+            _vm._m(4),
+            _vm._v(" "),
+            _c(
+              "td",
+              { staticStyle: { border: "1px solid", padding: "10px" } },
+              [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.donation["email"],
+                      expression: "donation['email']",
+                    },
+                  ],
+                  staticStyle: { width: "100%" },
+                  attrs: {
+                    maxlength: 100,
+                    type: "email",
+                    id: "email",
+                    name: "email",
+                    required: "",
+                  },
+                  domProps: { value: _vm.donation["email"] },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.donation, "email", $event.target.value)
+                    },
+                  },
+                }),
+              ]
+            ),
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _c("tr", [
+        _vm._m(5),
+        _vm._v(" "),
+        _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.donation["bank"],
+                  expression: "donation['bank']",
+                },
+              ],
+              staticStyle: { width: "100%" },
+              attrs: { id: "bank", name: "bank", required: "" },
+              on: {
+                change: function ($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function (o) {
+                      return o.selected
+                    })
+                    .map(function (o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.$set(
+                    _vm.donation,
+                    "bank",
+                    $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+                  )
+                },
+              },
+            },
+            [
+              _c("option"),
+              _vm._v(" "),
+              _c("option", [_vm._v("\tAFFIN BANK\t")]),
+              _vm._v(" "),
+              _c("option", [_vm._v("\tAGROBANK\t")]),
+              _vm._v(" "),
+              _c("option", [_vm._v("\tAL-RAJHI MALAYSIA\t")]),
+              _vm._v(" "),
+              _c("option", [_vm._v("\tALLIANCE BANK MALAYSIA BERHAD\t")]),
+              _vm._v(" "),
+              _c("option", [_vm._v("\tAMBANK\t")]),
+              _vm._v(" "),
+              _c("option", [_vm._v("\tBANK ISLAM MALAYSIA\t")]),
+              _vm._v(" "),
+              _c("option", [_vm._v("\tBANK MUAMALAT MALAYSIA BERHAD\t")]),
+              _vm._v(" "),
+              _c("option", [_vm._v("\tBANK RAKYAT\t")]),
+              _vm._v(" "),
+              _c("option", [_vm._v("\tBANK SIMPANAN NASIONAL (BSN)\t")]),
+              _vm._v(" "),
+              _c("option", [_vm._v("\tCIMB BANK BERHAD\t")]),
+              _vm._v(" "),
+              _c("option", [_vm._v("\tCITIBANK MALAYSIA\t")]),
+              _vm._v(" "),
+              _c("option", [_vm._v("\tCO-OP BANK PERTAMA\t")]),
+              _vm._v(" "),
+              _c("option", [_vm._v("\tHONG LEONG BANK\t")]),
+              _vm._v(" "),
+              _c("option", [_vm._v("\tHSBC BANK MALAYSIA\t")]),
+              _vm._v(" "),
+              _c("option", [_vm._v("\tMAYBANK\t")]),
+              _vm._v(" "),
+              _c("option", [_vm._v("\tMBSB BANK BERHAD\t")]),
+              _vm._v(" "),
+              _c("option", [_vm._v("\tOCBC BANK MALAYSIA\t")]),
+              _vm._v(" "),
+              _c("option", [_vm._v("\tPUBLIC BANK BERHAD\t")]),
+              _vm._v(" "),
+              _c("option", [_vm._v("\tRHB BANK\t")]),
+              _vm._v(" "),
+              _c("option", [_vm._v("\tSTANDARD CHARTERED BANK MALAYSIA\t")]),
+              _vm._v(" "),
+              _c("option", [_vm._v("\tUOB MALAYSIA\t")]),
+            ]
+          ),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("tr", [
+        _vm._m(6),
+        _vm._v(" "),
+        _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.donation["bank_no"],
+                expression: "donation['bank_no']",
+              },
+            ],
+            staticStyle: { width: "100%" },
+            attrs: {
+              maxlength: 19,
+              minlength: 6,
+              type: "text",
+              id: "bank_no",
+              name: "bank_no",
+              required: "",
+            },
+            domProps: { value: _vm.donation["bank_no"] },
+            on: {
+              keypress: _vm.NumbersOnly,
+              keydown: function ($event) {
+                if (
+                  !$event.type.indexOf("key") &&
+                  _vm._k($event.keyCode, "space", 32, $event.key, [
+                    " ",
+                    "Spacebar",
+                  ])
+                ) {
+                  return null
+                }
+                return function (event) {
+                  return event.preventDefault()
+                }.apply(null, arguments)
+              },
+              input: function ($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.donation, "bank_no", $event.target.value)
+              },
+            },
+          }),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("tr", [
+        _vm._m(7),
+        _vm._v(" "),
+        _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.donation["bank_owner_name"],
+                expression: "donation['bank_owner_name']",
+              },
+            ],
+            staticStyle: { width: "100%" },
+            attrs: {
+              maxlength: 30,
+              type: "text",
+              id: "bank_owner_name",
+              name: "bank_owner_name",
+              required: "",
+            },
+            domProps: { value: _vm.donation["bank_owner_name"] },
+            on: {
+              input: function ($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.donation, "bank_owner_name", $event.target.value)
+              },
+            },
+          }),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("tr", [
+        _vm._m(8),
+        _vm._v(" "),
+        _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.donation["expected_amount"],
+                expression: "donation['expected_amount']",
+              },
+            ],
+            staticStyle: { width: "100%" },
+            attrs: {
+              max: 5000,
+              step: ".01",
+              type: "number",
+              id: "expected_amount",
+              name: "expected_amount",
+              required: "",
+            },
+            domProps: { value: _vm.donation["expected_amount"] },
+            on: {
+              input: function ($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.donation, "expected_amount", $event.target.value)
+              },
+            },
+          }),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("tr", [
+        _vm._m(9),
+        _vm._v(" "),
+        _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.donation["current_amount"],
+                expression: "donation['current_amount']",
+              },
+            ],
+            staticStyle: { width: "100%" },
+            attrs: {
+              max: 5000,
+              step: ".01",
+              type: "number",
+              id: "current_amount",
+              name: "current_amount",
+              required: "",
+            },
+            domProps: { value: _vm.donation["current_amount"] },
+            on: {
+              input: function ($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.donation, "current_amount", $event.target.value)
+              },
+            },
+          }),
+        ]),
+      ]),
+      _vm._v(" "),
+      _vm._m(10),
+      _vm._v(" "),
+      _vm._m(11),
+    ]),
+  ])
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
+      _c("label", { attrs: { for: "username" } }, [_vm._v("PET NAME ")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
+      _c("label", { attrs: { for: "health_condition" } }, [
+        _vm._v("HEALTH CONDITION "),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
+      _c("label", { attrs: { for: "contact_info" } }, [
+        _vm._v("CONTACT INFO "),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
+      _c("label", { attrs: { for: "phone_number" } }, [
+        _vm._v("PHONE NUMBER "),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
+      _c("label", { attrs: { for: "email" } }, [_vm._v("EMAIL ")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
+      _c("label", { attrs: { for: "bank" } }, [_vm._v("BANK ")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
+      _c("label", { attrs: { for: "bank_no" } }, [_vm._v("BANK NUMBER ")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
+      _c("label", { attrs: { for: "bank_owner_name" } }, [
+        _vm._v("BANK OWNER FULL NAME "),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
+      _c("label", { attrs: { for: "expected_amount" } }, [
+        _vm._v("EXPECTED AMOUNT "),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
+      _c("label", { attrs: { for: "current_amount" } }, [
+        _vm._v("CURRENT AMOUNT "),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
+        _c("label", { attrs: { for: "pet_picture" } }, [
+          _vm._v("PET PICTURE "),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
+        _c("input", {
+          staticStyle: { width: "100%" },
+          attrs: { id: "pet_picture", name: "pet_picture", type: "file" },
+        }),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
+        _c("label", { attrs: { for: "vet_analysis" } }, [
+          _vm._v("VET ANALYSIS "),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
+        _c("input", {
+          staticStyle: { width: "100%" },
+          attrs: { id: "vet_analysis", name: "vet_analysis", type: "file" },
+        }),
       ]),
     ])
   },

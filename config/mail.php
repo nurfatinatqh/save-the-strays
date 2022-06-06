@@ -38,9 +38,9 @@ return [
             'transport' => 'smtp',
             'host' => 'smtp.gmail.com',
             'port' => 587,
-            'encryption' => 'tls',
+            'encryption' => 'ssl',
             'username' => 'savethestrays.malaysia@gmail.com',
-            'password' => 'SaveTheStrays2022',
+            'password' => 'jpgzyhylymrmbpzy',
             'timeout' => null,
             'auth_mode' => null,
         ],
@@ -92,7 +92,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'SaveTheStrays2022'),
+        'address' => env('MAIL_FROM_ADDRESS', 'savethestrays.malaysia@gmail.com'),
         'name' => env('MAIL_FROM_NAME', 'Save The Strays'),
     ],
 

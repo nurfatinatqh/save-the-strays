@@ -46,7 +46,7 @@
             <ul class="works-grid works-grid-gut works-grid-4 works-hover-w" id="works-grid">
                     <li v-for="(pet, index) in pets" :key="index" class="work-item" :class="pet.type">
                         <div class="post">
-                            <div class="post-thumbnail align-center"><img :src=pictures_pet[index] style="height: 200px; position:relative;" width="auto" alt="Blog-post Thumbnail"/></div>
+                            <div class="post-thumbnail align-center"><img :src=pet.pet_picture style="height: 200px; position:relative;" width="auto" alt="Blog-post Thumbnail"/></div>
                             <div class="post-header font-alt">
                                 <h2 class="post-title"> {{pet.name}} <a :href="'/hello-pets/update-adoption-status/' + pet.id"><button style="float: right; font-size:13px;" class="btn btn-warning btn-xs">UPDATE ADOPTION STATUS</button></a> </h2>
                                 <div class="post-meta"><br>

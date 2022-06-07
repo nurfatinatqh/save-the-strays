@@ -10,6 +10,7 @@ use App\Models\Volunteer;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class PetController extends Controller
 {
@@ -21,6 +22,11 @@ class PetController extends Controller
         $happy = Pet::whereAdoptionStatus(true)->get();
         $sad = Pet::whereAdoptionStatus(null)->get();
         $pets = Pet::whereAdoptionStatus(null)->get();
+
+        foreach ($pets as $key => $pet) {
+            $pet->pet_picture = Storage::disk('s3')->temporaryUrl($pet->pet_picture,now()->addMinutes(30));
+        }
+
         return view('pet-profile', compact('pets', 'happy', 'sad'));
     }
 

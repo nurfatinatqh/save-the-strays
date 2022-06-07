@@ -30897,22 +30897,6 @@ var render = function () {
               name: "name",
               required: "",
             },
-            on: {
-              keydown: function ($event) {
-                if (
-                  !$event.type.indexOf("key") &&
-                  _vm._k($event.keyCode, "space", 32, $event.key, [
-                    " ",
-                    "Spacebar",
-                  ])
-                ) {
-                  return null
-                }
-                return function (event) {
-                  return event.preventDefault()
-                }.apply(null, arguments)
-              },
-            },
           }),
         ]),
       ]),
@@ -32452,22 +32436,6 @@ var render = function () {
               name: "pet_name",
               required: "",
             },
-            on: {
-              keydown: function ($event) {
-                if (
-                  !$event.type.indexOf("key") &&
-                  _vm._k($event.keyCode, "space", 32, $event.key, [
-                    " ",
-                    "Spacebar",
-                  ])
-                ) {
-                  return null
-                }
-                return function (event) {
-                  return event.preventDefault()
-                }.apply(null, arguments)
-              },
-            },
           }),
         ]),
       ]),
@@ -33129,20 +33097,6 @@ var render = function () {
             },
             domProps: { value: _vm.donation["pet_name"] },
             on: {
-              keydown: function ($event) {
-                if (
-                  !$event.type.indexOf("key") &&
-                  _vm._k($event.keyCode, "space", 32, $event.key, [
-                    " ",
-                    "Spacebar",
-                  ])
-                ) {
-                  return null
-                }
-                return function (event) {
-                  return event.preventDefault()
-                }.apply(null, arguments)
-              },
               input: function ($event) {
                 if ($event.target.composing) {
                   return

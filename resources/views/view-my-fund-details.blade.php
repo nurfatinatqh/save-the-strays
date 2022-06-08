@@ -2,9 +2,13 @@
 
 @section('content')
   @include('components.header')
-
+  <script>
+    if (!document.location.hash){
+      document.location.hash = 'here';
+    }
+  </script>
   <section class="module-tips" id="alt-features">
-    <div class="container">
+    <div class="container" id="here"> <br><br>
       <div class="row">
         <div class="">
           <h2 class="module-title font-alt">SHARE THE LOVE BY DONATING</h2>

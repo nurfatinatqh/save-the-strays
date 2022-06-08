@@ -22,9 +22,68 @@ class PetController extends Controller
         $happy = Pet::whereAdoptionStatus(true)->get();
         $sad = Pet::whereAdoptionStatus(null)->get();
         $pets = Pet::whereAdoptionStatus(null)->get();
+        return view('pet-profile', compact('pets', 'happy', 'sad'));
+    }
 
-        foreach ($pets as $key => $pet) {
-            $pet->pet_picture = Storage::disk('s3')->temporaryUrl($pet->pet_picture,now()->addMinutes(30));
+    public function search(Request $request) {
+        $happy = Pet::whereAdoptionStatus(true)->get();
+        $sad = Pet::whereAdoptionStatus(null)->get();
+
+        if ($request->gender != null) {
+            if ($request->type != null) {
+                if ($request->state != null) {
+                    if ($request->city != null) {
+                        $pets = Pet::whereAdoptionStatus(null)->whereGender($request->gender)->whereType($request->type)->whereState($request->state)->whereCity($request->city)->get();
+                    }
+                    else {
+                        $pets = Pet::whereAdoptionStatus(null)->whereGender($request->gender)->whereType($request->type)->whereState($request->state)->get();
+                    }
+                }
+                else {
+                    $pets = Pet::whereAdoptionStatus(null)->whereGender($request->gender)->whereType($request->type)->get();
+                }
+            }
+            else {
+                if ($request->state != null) {
+                    if ($request->city != null) {
+                        $pets = Pet::whereAdoptionStatus(null)->whereGender($request->gender)->whereState($request->state)->whereCity($request->city)->get();
+                    }
+                    else {
+                        $pets = Pet::whereAdoptionStatus(null)->whereGender($request->gender)->whereState($request->state)->get();
+                    }
+                }
+                else {
+                    $pets = Pet::whereAdoptionStatus(null)->whereGender($request->gender)->get();
+                }
+            }
+        }
+        else {
+            if ($request->type != null) {
+                if ($request->state != null) {
+                    if ($request->city != null) {
+                        $pets = Pet::whereAdoptionStatus(null)->whereType($request->type)->whereState($request->state)->whereCity($request->city)->get();
+                    }
+                    else {
+                        $pets = Pet::whereAdoptionStatus(null)->whereType($request->type)->whereState($request->state)->get();
+                    }
+                }
+                else {
+                    $pets = Pet::whereAdoptionStatus(null)->whereType($request->type)->get();
+                }
+            }
+            else {
+                if ($request->state != null) {
+                    if ($request->city != null) {
+                        $pets = Pet::whereAdoptionStatus(null)->whereState($request->state)->whereCity($request->city)->get();
+                    }
+                    else {
+                        $pets = Pet::whereAdoptionStatus(null)->whereState($request->state)->get();
+                    }
+                }
+                else {
+                    $pets = Pet::whereAdoptionStatus(null)->get();
+                }
+            }
         }
 
         return view('pet-profile', compact('pets', 'happy', 'sad'));
@@ -94,9 +153,6 @@ class PetController extends Controller
         ]);
 
         $pet = Pet::findOrFail($id);
-        if ($pet->pet_picture != null) {
-            unlink(public_path($pet->pet_picture));
-        }
 
         $path = "storage/image/pet";
         $file= $request->file('pet_picture');
@@ -122,7 +178,17 @@ class PetController extends Controller
                 $followUp->delete();
             }
 
-            for ($i=1; $i<= 3; $i++) { 
+            for ($i=0; $i<=2; $i++) { 
+                $followUp = $user->adopter_FU()->save(new FollowUp([
+                    'follow_up_date' => Carbon::parse($request->adoption_date)->startOfMonth()->addMonth($i)->toDateTimeString(),
+                ]));
+                $pet->followUp()->save($followUp);
+                $volunteer = User::find($pet->volunteer_id);
+                $volunteer->volunteer_FU()->save($followUp);
+            }
+        }
+        else {
+            for ($i=0; $i<=2; $i++) { 
                 $followUp = $user->adopter_FU()->save(new FollowUp([
                     'follow_up_date' => Carbon::parse($request->adoption_date)->startOfMonth()->addMonth($i)->toDateTimeString(),
                 ]));

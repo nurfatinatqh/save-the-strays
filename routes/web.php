@@ -76,6 +76,7 @@ Route::get('/welcome', function () {
 
 Route::get('/volunteer-coverage-area', 'App\Http\Controllers\VolunteerCoverageController@fetchCoverageAreaPage')->name('view.coverage.area');
 Route::get('/hello-pets', 'App\Http\Controllers\PetController@fetchPetProfilePage')->name('pet.profile');
+Route::get('/hello-pets/search', 'App\Http\Controllers\PetController@search')->name('pet.search');
 Route::get('/medical-fund', 'App\Http\Controllers\DonationController@fetchMedicalFundPage')->name('all.medical.fund');
 
 Route::middleware('auth')->group(function() {

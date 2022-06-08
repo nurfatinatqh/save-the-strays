@@ -116,7 +116,7 @@
                 <br>
             </div>
         </div><br><br>
-        @if ($donation->status == "complete")
+        @if ($donation->updated_condition != null)
         <div style="text-align: center"><hr><b>CASE OUTCOME</b><hr><br></div>
         <div class="row">
           <div class="col-sm-3"></div>

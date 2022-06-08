@@ -11,7 +11,7 @@ class FollowUpController extends Controller
 {
     public function fetchFollowUpPage() {
         $user = Auth::user();
-        $followUps = FollowUp::whereVolunteerId($user->id)->orWhere(['adopter_id' => $user->id])->get();
+        $followUps = FollowUp::whereVolunteerId($user->id)->orWhere(['adopter_id' => $user->id])->orderBy('id')->get();
 
         $petAdopted = Pet::whereVolunteerId($user->id)->orWhere(['adopter_id' => $user->id])->get();
         return view('view-follow-up', compact('followUps', 'petAdopted'));

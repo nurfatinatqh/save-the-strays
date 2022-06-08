@@ -29,6 +29,11 @@ class PetController extends Controller
         $happy = Pet::whereAdoptionStatus(true)->get();
         $sad = Pet::whereAdoptionStatus(null)->get();
 
+        if ($request->type == "CAT") $request->type = "Cat";
+        if ($request->type == "DOG") $request->type = "Dog";
+        if ($request->gender == "MALE") $request->gender = "Male";
+        if ($request->gender == "FEMALE") $request->gender = "Female";
+
         if ($request->gender != null) {
             if ($request->type != null) {
                 if ($request->state != null) {

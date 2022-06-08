@@ -113,7 +113,7 @@
                     <div style="padding: 10px; height:250px; text-align: right;" class="col-sm-3">
                         @php
                           $url = Storage::disk('s3')->temporaryUrl(
-                            $complete_donation->updated_condition,
+                            $complete_donation->pet_picture,
                             now()->addMinutes(10)
                           );
                         @endphp
@@ -123,7 +123,7 @@
                     <div style="padding: 10px; height:250px; text-align: left;" class="col-sm-3">
                         @php
                           $url = Storage::disk('s3')->temporaryUrl(
-                            $complete_donation->receipt,
+                            $complete_donation->vet_analysis,
                             now()->addMinutes(10)
                           );
                         @endphp

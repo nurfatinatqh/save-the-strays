@@ -44,7 +44,7 @@
             </div>
             </div>
             <ul class="works-grid works-grid-gut works-grid-4 works-hover-w" id="works-grid">
-                    <li v-for="(pet, index) in filterList()" :key="index" class="work-item" :class="pet.type">
+                    <li v-for="(pet, index) in petsList" :key="index" class="work-item" :class="pet.type">
                         <div class="post">
                             <div class="post-thumbnail align-center"><img :src=pet.pet_picture style="height: 200px; position:relative;" width="auto" alt="Blog-post Thumbnail"/></div>
                             <div class="post-header font-alt">
@@ -108,7 +108,6 @@
                     this.filterType != null ? this.pets = this.pets.filter(pet => pet.type.toLowerCase() == this.filterType.toLowerCase()) : null;
                     this.filterState != null ? this.pets = this.pets.filter(pet => pet.state == this.filterState) : null;
                     this.filterCity != null ? this.pets = this.pets.filter(pet => pet.city == this.filterCity) : null;
-                    return this.pets;
                 }
                 if(option == 2) {
                     this.pets = this.originalList;
@@ -116,7 +115,6 @@
                     this.filterGender != null ? this.pets = this.pets.filter(pet => pet.gender.toLowerCase() == this.filterGender.toLowerCase()) : null;
                     this.filterState != null ? this.pets = this.pets.filter(pet => pet.state == this.filterState) : null;
                     this.filterCity != null ? this.pets = this.pets.filter(pet => pet.city == this.filterCity) : null;
-                    return this.pets;
                 }
                 if(option == 3) {
                     this.locations.forEach(temp => {
@@ -129,7 +127,6 @@
                     this.filterGender != null ? this.pets = this.pets.filter(pet => pet.gender.toLowerCase() == this.filterGender.toLowerCase()) : null;
                     this.filterType != null ? this.pets = this.pets.filter(pet => pet.type.toLowerCase() == this.filterType.toLowerCase()) : null;
                     this.filterCity != null ? this.pets = this.pets.filter(pet => pet.city == this.filterCity) : null;
-                    return this.pets;
                 }
                 if(option == 4) {
                     this.pets = this.originalList;
@@ -137,7 +134,6 @@
                     this.filterGender != null ? this.pets = this.pets.filter(pet => pet.gender.toLowerCase() == this.filterGender.toLowerCase()) : null;
                     this.filterType != null ? this.pets = this.pets.filter(pet => pet.type.toLowerCase() == this.filterType.toLowerCase()) : null;
                     this.filterState != null ? this.pets = this.pets.filter(pet => pet.state == this.filterState) : null;
-                    return this.pets;
                 }
                 return this.pets;
             },
@@ -188,6 +184,11 @@
 
         mounted() {
             
+        },
+        computed: {
+            petsList () {
+                return this.pets
+            }
         }
     }
 </script>

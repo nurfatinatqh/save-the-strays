@@ -35,7 +35,7 @@
                     now()->addMinutes(10)
                   );
                 @endphp
-                <div class="post-thumbnail align-center" style="height: 250px;"><img src="{{$url}}" style="max-width: 100%; max-height:100%; position:relative;" width="auto" alt="Blog-post Thumbnail"/></div>
+                <div class="post-thumbnail align-center"><img src="{{$url}}" style="height: 200px; position:relative;" width="auto" alt="Blog-post Thumbnail"/></div>
                 <div class="post-header font-alt">
                     <h2 class="post-title"> {{$pet->name}} <a href="{{route('update.adoption.status', $pet->id)}}"><button style="float: right; font-size:13px;" class="btn btn-warning btn-xs">UPDATE ADOPTION STATUS</button></a> </h2>
                     <div class="post-meta"><br>

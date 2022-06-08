@@ -78,6 +78,7 @@ Route::get('/volunteer-coverage-area', 'App\Http\Controllers\VolunteerCoverageCo
 Route::get('/hello-pets', 'App\Http\Controllers\PetController@fetchPetProfilePage')->name('pet.profile');
 Route::get('/hello-pets/search', 'App\Http\Controllers\PetController@search')->name('pet.search');
 Route::get('/medical-fund', 'App\Http\Controllers\DonationController@fetchMedicalFundPage')->name('all.medical.fund');
+Route::get('/medical-fund/{id}/donor-list', 'App\Http\Controllers\DonationController@fetchViewDonorsPage')->name('view.donors');
 
 Route::middleware('auth')->group(function() {
     Route::get('/hello-pets/update-adoption-status/{id}', 'App\Http\Controllers\PetController@fetchUpdateAdoptionStatusPage')->name('update.adoption.status')->middleware('auth');
@@ -98,7 +99,6 @@ Route::middleware('auth')->group(function() {
     Route::post('/start-new-medical-fund-page/{id}', 'App\Http\Controllers\DonationController@startNewFund')->name('submit.medical.fund');
     Route::get('/medical-fund/{id}/add-donor', 'App\Http\Controllers\DonationController@fetchAddDonorPage')->name('add.donor');
     Route::post('/medical-fund/{id}/add-donor', 'App\Http\Controllers\DonationController@addNewDonor')->name('submit.donor');
-    Route::get('/medical-fund/{id}/donor-list', 'App\Http\Controllers\DonationController@fetchViewDonorsPage')->name('view.donors');
     Route::get('/medical-fund/{id}/my-list', 'App\Http\Controllers\DonationController@fetchMyMedicalFundPage')->name('my.medical.fund');
     Route::get('/medical-fund/{id}/my-list/view-details', 'App\Http\Controllers\DonationController@fetchMyMedicalFundDetailsPage')->name('my.medical.fund.details');
     Route::get('/medical-fund/{id}/my-list/view-details/get-update-form', 'App\Http\Controllers\DonationController@fetchUpdateFundInfoForm')->name('get.update.form');

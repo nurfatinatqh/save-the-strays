@@ -54,6 +54,9 @@
                                             </tr>
                                         </table>
                                     </td>
+                                    @php
+                                        array_multisort(array_column($followUps, 'id'),  SORT_ASC,);
+                                    @endphp
                                     @foreach ($followUps as $followUp)
                                         @if ($pet->id == $followUp->pet_id)
                                             <td style="border: 1px dotted coral; padding:20px; width:25%;">

@@ -112,7 +112,7 @@
                 }
                 if(option == 2) {
                     this.pets = this.originalList;
-                    this.pets = this.pets.filter(pet => pet.type.toLowerCase() == type.toLowerCase());
+                    this.pets = this.pets.filter(pet => pet.type.toLowerCase() == type.toString().toLowerCase());
                     this.filterGender != null ? this.pets = this.pets.filter(pet => pet.gender.toLowerCase() == this.filterGender.toLowerCase()) : null;
                     this.filterState != null ? this.pets = this.pets.filter(pet => pet.state == this.filterState) : null;
                     this.filterCity != null ? this.pets = this.pets.filter(pet => pet.city == this.filterCity) : null;

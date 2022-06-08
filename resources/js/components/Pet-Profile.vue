@@ -15,27 +15,27 @@
                 <ul class="filter font-alt" id="filters">
                     <li>
                         <label for="gender">GENDER</label>
-                        <select id="gender" name="gender" v-model='filterGender' v-on:change='filterList(1)' required>
+                        <select id="gender" name="gender" v-model='filterGender' v-on:change='filterList(1, filterGender)' required>
                             <option> MALE </option>
                             <option> FEMALE </option>
                         </select>
                     </li>
                     <li>
                         <label for="type">TYPE</label>
-                        <select id="type" name="type" v-model='filterType' v-on:change='filterList(2)' required>
+                        <select id="type" name="type" v-model='filterType' v-on:change='filterList(2, filterType)' required>
                             <option> CAT </option>
                             <option> DOG </option>
                         </select>
                     </li>
                     <li>
                         <label for="state">STATE</label>
-                        <select id="state" name="state" v-model='filterState' v-on:change='filterList(3)' required>
+                        <select id="state" name="state" v-model='filterState' v-on:change='filterList(3, filterState)' required>
                             <option v-for="location in locations" :key="location.id" v-text="location.state"></option>
                         </select>
                     </li>
                     <li>
                         <label for="city"> CITY</label>
-                        <select id="city" name="city" v-model='filterCity' v-on:change='filterList(4)' required>
+                        <select id="city" name="city" v-model='filterCity' v-on:change='filterList(4, filterCity)' required>
                             <option v-for="city in cities" :key="city.id" v-text="city"></option>
                         </select>
                     </li>
@@ -101,10 +101,10 @@
             }
         },
         methods: {
-            filterList(option) {
+            filterList(option, fValue) {
                 if(option == 1) {
                     this.pets = this.originalList;
-                    this.pets = this.pets.filter(pet => pet.gender.toLowerCase() == gender.toLowerCase());
+                    this.pets = this.pets.filter(pet => pet.gender.toLowerCase() == fValue.toLowerCase());
                     this.filterType != null ? this.pets = this.pets.filter(pet => pet.type.toLowerCase() == this.filterType.toLowerCase()) : null;
                     this.filterState != null ? this.pets = this.pets.filter(pet => pet.state == this.filterState) : null;
                     this.filterCity != null ? this.pets = this.pets.filter(pet => pet.city == this.filterCity) : null;
@@ -112,7 +112,7 @@
                 }
                 if(option == 2) {
                     this.pets = this.originalList;
-                    this.pets = this.pets.filter(pet => pet.type.toLowerCase() == type.toString().toLowerCase());
+                    this.pets = this.pets.filter(pet => pet.type.toLowerCase() == fValue.toLowerCase());
                     this.filterGender != null ? this.pets = this.pets.filter(pet => pet.gender.toLowerCase() == this.filterGender.toLowerCase()) : null;
                     this.filterState != null ? this.pets = this.pets.filter(pet => pet.state == this.filterState) : null;
                     this.filterCity != null ? this.pets = this.pets.filter(pet => pet.city == this.filterCity) : null;
@@ -125,7 +125,7 @@
                         }
                     });
                     this.pets = this.originalList;
-                    this.pets = this.pets.filter(pet => pet.state == state);
+                    this.pets = this.pets.filter(pet => pet.state == fValue);
                     this.filterGender != null ? this.pets = this.pets.filter(pet => pet.gender.toLowerCase() == this.filterGender.toLowerCase()) : null;
                     this.filterType != null ? this.pets = this.pets.filter(pet => pet.type.toLowerCase() == this.filterType.toLowerCase()) : null;
                     this.filterCity != null ? this.pets = this.pets.filter(pet => pet.city == this.filterCity) : null;
@@ -133,13 +133,13 @@
                 }
                 if(option == 4) {
                     this.pets = this.originalList;
-                    this.pets = this.pets.filter(pet => pet.city == city);
+                    this.pets = this.pets.filter(pet => pet.city == fValue);
                     this.filterGender != null ? this.pets = this.pets.filter(pet => pet.gender.toLowerCase() == this.filterGender.toLowerCase()) : null;
                     this.filterType != null ? this.pets = this.pets.filter(pet => pet.type.toLowerCase() == this.filterType.toLowerCase()) : null;
                     this.filterState != null ? this.pets = this.pets.filter(pet => pet.state == this.filterState) : null;
                     return this.pets;
                 }
-                return this.originalList;
+                return this.pets;
             },
             setGender(gender) {
                 this.pets = this.originalList;

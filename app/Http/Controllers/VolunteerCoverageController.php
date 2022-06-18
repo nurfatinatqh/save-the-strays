@@ -18,6 +18,13 @@ class VolunteerCoverageController extends Controller
 
     public function doUpdate(Request $request, $id) {
 
+        $request->validate([
+            'street' => ['required', 'string'],
+            'area' => ['required', 'string'],
+            'district' => ['required', 'string'],
+            'state' => ['required', 'string'],
+        ]);
+        
         $coverageArea = VolunteerCoverage::findOrFail($id);
 
         $coverageArea->street = $request->street;
@@ -37,6 +44,13 @@ class VolunteerCoverageController extends Controller
     }
 
     public function doRegistration(Request $request, $id) {
+
+        $request->validate([
+            'street' => ['required', 'string'],
+            'area' => ['required', 'string'],
+            'district' => ['required', 'string'],
+            'state' => ['required', 'string'],
+        ]);
 
         $user = User::findOrFail($id);
         $user->role = "VOLUNTEER";

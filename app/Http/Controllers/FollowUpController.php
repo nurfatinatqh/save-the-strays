@@ -9,11 +9,10 @@ use Illuminate\Support\Facades\Auth;
 
 class FollowUpController extends Controller
 {
-    public function fetchFollowUpPage() {
-        $user = Auth::user();
-        $followUps = FollowUp::whereVolunteerId($user->id)->orWhere(['adopter_id' => $user->id])->orderBy('id')->get();
+    public function fetchFollowUpPage($id) {
+        $followUps = FollowUp::whereVolunteerId($id)->orWhere(['adopter_id' => $id])->orderBy('id')->get();
 
-        $petAdopted = Pet::whereVolunteerId($user->id)->orWhere(['adopter_id' => $user->id])->get();
+        $petAdopted = Pet::whereVolunteerId($id)->orWhere(['adopter_id' => $id])->get();
         return view('view-follow-up', compact('followUps', 'petAdopted'));
     }
 
@@ -49,6 +48,6 @@ class FollowUpController extends Controller
         $followUp->save();
 
         session()->flash('message', 'Detail Submitted!');
-        return redirect()->route('view.follow.up');
+        return redirect()->route('view.follow.up', Auth::user()->id);
     }
 }

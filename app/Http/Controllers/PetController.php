@@ -145,7 +145,7 @@ class PetController extends Controller
         return view('update-adoption-status', compact('pet'));
     }
 
-    public function UpdateAdoptionStatus(Request $request, $id) {
+    public function updateAdoptionStatus(Request $request, $id) {
 
         // $first = Carbon::parse($request->adoption_date)->startOfMonth()->addMonth(1);
         // $second = Carbon::parse($request->adoption_date)->startOfMonth()->addMonth(2);
@@ -204,6 +204,12 @@ class PetController extends Controller
         }
 
         session()->flash('message', 'Successfully Updated The Adoption Status  A For '.$pet->name. '!');
-        return redirect()->route('view.follow.up');
+        return redirect()->route('view.follow.up', $user->id);
+    }
+
+    public function fetchTipsPage() {
+        $happy = Pet::whereAdoptionStatus(true)->get();
+        $sad = Pet::whereAdoptionStatus(null)->get();
+        return view('pet-care-and-health-tips', compact('happy', 'sad'));
     }
 }

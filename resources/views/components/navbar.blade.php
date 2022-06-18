@@ -55,7 +55,7 @@
         <li><a class="section-scroll" href="{{route('all.medical.fund')}}">Medical Fund</a></li>
       @endif
       @if (Auth::check())
-        <li><a class="section-scroll" href="{{route('view.follow.up')}}">Follow Up</a></li>
+        <li><a class="section-scroll" href="{{route('view.follow.up', Auth::user()->id)}}">Follow Up</a></li>
       @endif
     </ul>
     <ul class="nav navbar-nav navbar-right">

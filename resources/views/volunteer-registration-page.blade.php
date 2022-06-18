@@ -20,7 +20,7 @@
                             <volunteer-registration-component></volunteer-registration-component>
                         </div>
                         <br>
-                        <button type="submit" class="btn btn-success btn-round" style="width: 100%">UPDATE</button>
+                        <button type="submit" class="btn btn-success btn-round" style="width: 100%">REGISTER NOW</button>
                     </form>
                 </div>
             </div>

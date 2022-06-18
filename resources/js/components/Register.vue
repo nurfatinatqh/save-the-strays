@@ -15,16 +15,16 @@
             </div>
         </div>
         <div class="form-group">
-            <input @keydown.space="(event) => event.preventDefault()" class="form-control" placeholder="Username" id="username" type="text" name="username" required />
+            <input @keydown.space="(event) => event.preventDefault()" :minlength="6" :maxlength="30" class="form-control"  placeholder="Username" id="username" type="text" name="username" required />
         </div>
         <div class="form-group">
             <input class="form-control" placeholder="Email" id="email" type="email" name="email" required />
         </div>
         <div class="form-group">
-            <input class="form-control" id="password" type="password" name="password" placeholder="Password" required autocomplete="new-password"/>
+            <input class="form-control" id="password" type="password" :minlength="8" :maxlength="18" name="password" placeholder="Password" required autocomplete="new-password"/>
         </div>
         <div class="form-group">
-            <input class="form-control" id="password_confirmation" type="password" name="password_confirmation" placeholder="Confirm Password" required/>
+            <input class="form-control" id="password_confirmation" :minlength="8" :maxlength="18" type="password" name="password_confirmation" placeholder="Confirm Password" required/>
         </div>
         <div class="form-group">
             <button class="btn btn-login"><b>Register</b></button>

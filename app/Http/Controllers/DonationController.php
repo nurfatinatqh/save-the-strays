@@ -140,7 +140,6 @@ class DonationController extends Controller
     }
 
     public function updateFundInfo(Request $request, $id) {
-        $donation = Donation::findOrFail($id);
 
         $request->validate([
             'pet_name' => ['required', 'string', 'max:255'],
@@ -154,6 +153,8 @@ class DonationController extends Controller
             'expected_amount' => ['required'],
             'current_amount' => ['required'],
         ]);
+
+        $donation = Donation::findOrFail($id);
 
         if($request->file('pet_picture')){
             Storage::disk('s3')->delete($donation->pet_picture);
@@ -226,13 +227,14 @@ class DonationController extends Controller
     }
 
     public function updateCase(Request $request, $id) {
-        $donation = Donation::findOrFail($id);
 
         $request->validate([
             'health_condition' => ['required'],
             'updated_condition' => ['required', 'image'],
             'receipt' => ['required', 'image'],
         ]);
+
+        $donation = Donation::findOrFail($id);
 
         Storage::disk('s3')->delete($donation->updated_condition);
 

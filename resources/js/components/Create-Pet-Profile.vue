@@ -2,7 +2,7 @@
     <div>
         <table style="border: 1px solid; width: 100%">
             <tr>
-                <td style="border: 1px solid; padding: 10px;"><label for="username">NAME </label></td>
+                <td style="border: 1px solid; padding: 10px;"><label for="name">NAME </label></td>
                 <td style="border: 1px solid; padding: 10px;"><input :maxlength=100 style="width: 100%" type="text" id="name" name="name" required></td>
             </tr>
             <tr>
@@ -38,11 +38,11 @@
                 </td>
             </tr>
             <tr>
-                <td style="border: 1px solid; padding: 10px;"><label for="username">HEALTH CONDITION </label></td>
+                <td style="border: 1px solid; padding: 10px;"><label for="health_condition">HEALTH CONDITION </label></td>
                 <td style="border: 1px solid; padding: 10px;"><input :maxlength=300 style="width: 100%" type="text" id="health_condition" name="health_condition" required></td>
             </tr>
             <tr>
-                <td style="border: 1px solid; padding: 10px;"><label for="address">LOCATION </label></td>
+                <td style="border: 1px solid; padding: 10px;"><label for="location">LOCATION </label></td>
                 <td style="border: 1px solid; padding: 10px;">
                     <textarea style="width: 100%" name="location" id="location" cols="30" rows="3" required></textarea>
                     <label for="state">STATE</label>

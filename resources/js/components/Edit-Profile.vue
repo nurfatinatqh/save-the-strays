@@ -3,7 +3,7 @@
         <table style="border: 1px solid; width: 100%">
             <tr>
                 <td style="border: 1px solid; padding: 10px;"><label for="username">USERNAME </label></td>
-                <td style="border: 1px solid; padding: 10px;"><input @keydown.space="(event) => event.preventDefault()" :minlength="5" :maxlength=30 style="width: 100%" type="text" id="username" name="username" v-model="name" required></td>
+                <td style="border: 1px solid; padding: 10px;"><input @keydown.space="(event) => event.preventDefault()" :minlength="6" :maxlength=30 style="width: 100%" type="text" id="username" name="username" v-model="name" required></td>
             </tr>
             <tr>
                 <td style="border: 1px solid; padding: 10px;"><label for="email">EMAIL &nbsp;&nbsp;</label></td>

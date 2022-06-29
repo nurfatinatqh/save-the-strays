@@ -17,13 +17,13 @@ class DonationController extends Controller
 
     public function startNewFund(Request $request, $id) {
         $request->validate([
-            'pet_name' => ['required', 'string', 'max:255'],
+            'pet_name' => ['required', 'string', 'max:20'],
             'health_condition' => ['required'],
             'contact_info' => ['required', 'string'],
-            'phone_number' => ['string'],
+            'phone_number' => ['string', 'max:12'],
             'email' => ['string', 'email'],
             'bank' => ['required', 'string'],
-            'bank_no' => ['required', 'string'],
+            'bank_no' => ['required', 'string', 'max:19'],
             'bank_owner_name' => ['required', 'string'],
             'expected_amount' => ['required'],
             'current_amount' => ['required'],
@@ -91,7 +91,7 @@ class DonationController extends Controller
 
     public function addNewDonor(Request $request, $id) {
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:50'],
             'amount_of_donation' => ['required'],
         ]);
 

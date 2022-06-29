@@ -5535,6 +5535,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -30813,22 +30814,7 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("table", { staticStyle: { border: "1px solid", width: "100%" } }, [
-      _c("tr", [
-        _vm._m(0),
-        _vm._v(" "),
-        _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
-          _c("input", {
-            staticStyle: { width: "100%" },
-            attrs: {
-              maxlength: 100,
-              type: "text",
-              id: "name",
-              name: "name",
-              required: "",
-            },
-          }),
-        ]),
-      ]),
+      _vm._m(0),
       _vm._v(" "),
       _vm._m(1),
       _vm._v(" "),
@@ -30960,8 +30946,7 @@ var render = function () {
           _c("input", {
             staticStyle: { width: "100%" },
             attrs: {
-              maxlength: 12,
-              minlength: 10,
+              minlength: 9,
               type: "text",
               id: "phone_number",
               name: "phone_number",
@@ -30997,8 +30982,17 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
-      _c("label", { attrs: { for: "name" } }, [_vm._v("NAME ")]),
+    return _c("tr", [
+      _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
+        _c("label", { attrs: { for: "name" } }, [_vm._v("NAME ")]),
+      ]),
+      _vm._v(" "),
+      _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
+        _c("input", {
+          staticStyle: { width: "100%" },
+          attrs: { type: "text", id: "name", name: "name", required: "" },
+        }),
+      ]),
     ])
   },
   function () {
@@ -31136,6 +31130,7 @@ var staticRenderFns = [
         _c("input", {
           staticStyle: { width: "100%" },
           attrs: {
+            accept: "image/*",
             id: "pet_picture",
             name: "pet_picture",
             type: "file",
@@ -31186,7 +31181,6 @@ var render = function () {
             staticStyle: { width: "100%" },
             attrs: {
               minlength: 6,
-              maxlength: 30,
               type: "text",
               id: "username",
               name: "username",
@@ -31276,8 +31270,7 @@ var render = function () {
             ],
             staticStyle: { width: "100%" },
             attrs: {
-              maxlength: 12,
-              minlength: 10,
+              minlength: 9,
               type: "text",
               id: "phone_number",
               name: "phone_number",
@@ -31353,8 +31346,8 @@ var render = function () {
             staticStyle: { width: "100%" },
             attrs: {
               type: "password",
+              autocomplete: "new-password",
               minlength: 8,
-              maxlength: 18,
               id: "password",
               name: "password",
               placeholder: "For password change only.",
@@ -31371,8 +31364,8 @@ var render = function () {
             staticStyle: { width: "100%" },
             attrs: {
               id: "password_confirmation",
+              autocomplete: "off",
               minlength: 8,
-              maxlength: 18,
               type: "password",
               name: "password_confirmation",
               placeholder: "For password change only.",
@@ -31452,7 +31445,12 @@ var staticRenderFns = [
       _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
         _c("input", {
           staticStyle: { width: "100%" },
-          attrs: { id: "image", name: "image", type: "file" },
+          attrs: {
+            id: "image",
+            name: "image",
+            accept: "image/*",
+            type: "file",
+          },
         }),
       ]),
     ])
@@ -31990,7 +31988,6 @@ var render = function () {
         staticClass: "form-control",
         attrs: {
           minlength: 6,
-          maxlength: 30,
           placeholder: "Username",
           id: "username",
           type: "text",
@@ -32022,7 +32019,6 @@ var render = function () {
           id: "password",
           type: "password",
           minlength: 8,
-          maxlength: 18,
           name: "password",
           placeholder: "Password",
           required: "",
@@ -32037,7 +32033,6 @@ var render = function () {
         attrs: {
           id: "password_confirmation",
           minlength: 8,
-          maxlength: 18,
           type: "password",
           name: "password_confirmation",
           placeholder: "Confirm Password",
@@ -32224,22 +32219,7 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("table", { staticStyle: { border: "1px solid", width: "100%" } }, [
-      _c("tr", [
-        _vm._m(0),
-        _vm._v(" "),
-        _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
-          _c("input", {
-            staticStyle: { width: "100%" },
-            attrs: {
-              maxlength: 30,
-              type: "text",
-              id: "pet_name",
-              name: "pet_name",
-              required: "",
-            },
-          }),
-        ]),
-      ]),
+      _vm._m(0),
       _vm._v(" "),
       _vm._m(1),
       _vm._v(" "),
@@ -32298,8 +32278,7 @@ var render = function () {
                 _c("input", {
                   staticStyle: { width: "100%" },
                   attrs: {
-                    maxlength: 12,
-                    minlength: 10,
+                    minlength: 9,
                     type: "text",
                     id: "phone_number",
                     name: "phone_number",
@@ -32360,7 +32339,6 @@ var render = function () {
           _c("input", {
             staticStyle: { width: "100%" },
             attrs: {
-              maxlength: 19,
               minlength: 6,
               type: "text",
               id: "bank_no",
@@ -32388,22 +32366,7 @@ var render = function () {
         ]),
       ]),
       _vm._v(" "),
-      _c("tr", [
-        _vm._m(7),
-        _vm._v(" "),
-        _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
-          _c("input", {
-            staticStyle: { width: "100%" },
-            attrs: {
-              maxlength: 30,
-              type: "text",
-              id: "bank_owner_name",
-              name: "bank_owner_name",
-              required: "",
-            },
-          }),
-        ]),
-      ]),
+      _vm._m(7),
       _vm._v(" "),
       _c("tr", [
         _vm._m(8),
@@ -32452,8 +32415,22 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
-      _c("label", { attrs: { for: "username" } }, [_vm._v("PET NAME ")]),
+    return _c("tr", [
+      _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
+        _c("label", { attrs: { for: "username" } }, [_vm._v("PET NAME ")]),
+      ]),
+      _vm._v(" "),
+      _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
+        _c("input", {
+          staticStyle: { width: "100%" },
+          attrs: {
+            type: "text",
+            id: "pet_name",
+            name: "pet_name",
+            required: "",
+          },
+        }),
+      ]),
     ])
   },
   function () {
@@ -32586,9 +32563,23 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
-      _c("label", { attrs: { for: "bank_owner_name" } }, [
-        _vm._v("BANK OWNER FULL NAME "),
+    return _c("tr", [
+      _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
+        _c("label", { attrs: { for: "bank_owner_name" } }, [
+          _vm._v("BANK OWNER FULL NAME "),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("td", { staticStyle: { border: "1px solid", padding: "10px" } }, [
+        _c("input", {
+          staticStyle: { width: "100%" },
+          attrs: {
+            type: "text",
+            id: "bank_owner_name",
+            name: "bank_owner_name",
+            required: "",
+          },
+        }),
       ]),
     ])
   },
@@ -32627,6 +32618,7 @@ var staticRenderFns = [
         _c("input", {
           staticStyle: { width: "100%" },
           attrs: {
+            accept: "image/*",
             id: "pet_picture",
             name: "pet_picture",
             type: "file",
@@ -32651,6 +32643,7 @@ var staticRenderFns = [
         _c("input", {
           staticStyle: { width: "100%" },
           attrs: {
+            accept: "image/*",
             id: "vet_analysis",
             name: "vet_analysis",
             type: "file",

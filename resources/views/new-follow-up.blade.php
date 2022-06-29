@@ -20,7 +20,7 @@
                             </tr>
                             <tr>
                                 <td style="border: 1px solid; padding: 10px;"><label for="picture">PICTURE </label></td>
-                                <td style="border: 1px solid; padding: 10px;"><input type="file" style="width: 100%" name="picture" id="picture" required></td>
+                                <td style="border: 1px solid; padding: 10px;"><input accept="image/*" type="file" style="width: 100%" name="picture" id="picture" required></td>
                             </tr>
                         </table>
                         <br>

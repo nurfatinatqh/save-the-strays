@@ -40,10 +40,10 @@ class UserController extends Controller
     public function doRegistration(Request $request)
     {
         $request->validate([
-            'username' => ['required', 'string', 'max:100', 'unique:users'],
+            'username' => ['required', 'string', 'min:6', 'max:30', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'role' => ['required', 'string'],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'password' => ['required', 'confirmed', 'max:18', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
@@ -134,6 +134,11 @@ class UserController extends Controller
 
         $user = User::findOrFail($id);
 
+        $request->validate([
+            'address' => ['required', 'string'],
+            'phone_number' => ['required', 'max:12', 'string'],
+        ]);
+
         if($user->email != $request->email) {
             $request->validate([
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:users']
@@ -144,7 +149,7 @@ class UserController extends Controller
 
         if($user->username != $request->username) {
             $request->validate([
-                'username' => ['required', 'string', 'max:100', 'unique:users'],
+                'username' => ['required', 'string', 'max:30', 'unique:users'],
             ]);
 
             User::where('id',$id)->update(['username'=>$request->username]);
@@ -171,26 +176,17 @@ class UserController extends Controller
             );
             
             User::where('id',$id)->update([
-                'username'=>$request->username, 
-                'email'=>$request->email,
-                'address'=>$request->address, 
-                'phone_number'=>$request->phone_number,
                 'image' => $path."/".$filename
             ]);
         }
 
         if($request->password) {
             $request->validate([
-                'password' => ['required', 'confirmed', Rules\Password::defaults()],
+                'password' => ['required', 'confirmed', 'max:18', Rules\Password::defaults()],
             ]);
 
             User::where('id',$id)->update(['password' => Hash::make($request->password)]);
         }
-
-        $request->validate([
-            'address' => ['required', 'string'],
-            'phone_number' => ['required', 'string'],
-        ]);
 
         User::where('id',$id)->update([
             'address'=>$request->address, 

@@ -3,7 +3,7 @@
         <table style="border: 1px solid; width: 100%">
             <tr>
                 <td style="border: 1px solid; padding: 10px;"><label for="name">NAME </label></td>
-                <td style="border: 1px solid; padding: 10px;"><input :maxlength=100 style="width: 100%" type="text" id="name" name="name" required></td>
+                <td style="border: 1px solid; padding: 10px;"><input style="width: 100%" type="text" id="name" name="name" required></td>
             </tr>
             <tr>
                 <td style="border: 1px solid; padding: 10px;"><label>PET TYPE &nbsp;&nbsp;</label></td>
@@ -58,11 +58,11 @@
             </tr>
             <tr>
                 <td style="border: 1px solid; padding: 10px;"><label for="phone_number">PHONE NUMBER </label></td>
-                <td style="border: 1px solid; padding: 10px;"><input v-on:keypress="NumbersOnly" @keydown.space="(event) => event.preventDefault()" :maxlength=12 :minlength=10 style="width: 100%" type="text" id="phone_number" name="phone_number" required></td>
+                <td style="border: 1px solid; padding: 10px;"><input v-on:keypress="NumbersOnly" @keydown.space="(event) => event.preventDefault()" :minlength=9 style="width: 100%" type="text" id="phone_number" name="phone_number" required></td>
             </tr>
             <tr>
                 <td style="border: 1px solid; padding: 10px;"><label for="pet_picture">PET PICTURE </label></td>
-                <td style="border: 1px solid; padding: 10px;"><input style="width: 100%" id="pet_picture" name="pet_picture" type="file" required></td>
+                <td style="border: 1px solid; padding: 10px;"><input style="width: 100%" accept="image/*" id="pet_picture" name="pet_picture" type="file" required></td>
             </tr>
         </table>
     </div>

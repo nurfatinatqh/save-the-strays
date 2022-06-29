@@ -19,7 +19,7 @@
                             </tr>
                             <tr>
                                 <td style="border: 1px solid; padding: 10px;"><label for="pet_picture">PROOF OF ADOPTION </label></td>
-                                <td style="border: 1px solid; padding: 10px;"><input type="file" style="width: 100%" name="pet_picture" id="pet_picture" cols="30" rows="5" required></td>
+                                <td style="border: 1px solid; padding: 10px;"><input accept="image/*" type="file" style="width: 100%" name="pet_picture" id="pet_picture" cols="30" rows="5" required></td>
                             </tr>
                         </table>
                         <br>

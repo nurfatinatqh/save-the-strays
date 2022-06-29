@@ -6,7 +6,7 @@
             <div class="container child">
                 <h4 class="font-alt align-center">Join us for more exciting experience!</h4>
                 <br>
-                <form method="POST" action="{{ route('login') }}">
+                <form autocomplete="off" method="POST" action="{{ route('login') }}">
                     @csrf
                     <div id="app">
                         <login-component></login-component>

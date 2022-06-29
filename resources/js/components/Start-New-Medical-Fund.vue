@@ -3,7 +3,7 @@
         <table style="border: 1px solid; width: 100%">
             <tr>
                 <td style="border: 1px solid; padding: 10px;"><label for="username">PET NAME </label></td>
-                <td style="border: 1px solid; padding: 10px;"><input :maxlength=30 style="width: 100%" type="text" id="pet_name" name="pet_name" required></td>
+                <td style="border: 1px solid; padding: 10px;"><input style="width: 100%" type="text" id="pet_name" name="pet_name" required></td>
             </tr>
             <tr>
                 <td style="border: 1px solid; padding: 10px;"><label for="health_condition">HEALTH CONDITION </label></td>
@@ -23,7 +23,7 @@
             </tr>
             <tr v-if="contact === 'PHONE NUMBER'">
                 <td style="border: 1px solid; padding: 10px;"><label for="phone_number">PHONE NUMBER </label></td>
-                <td style="border: 1px solid; padding: 10px;"><input v-on:keypress="NumbersOnly" @keydown.space="(event) => event.preventDefault()" :maxlength=12 :minlength=10 style="width: 100%" type="text" id="phone_number" name="phone_number" required></td>
+                <td style="border: 1px solid; padding: 10px;"><input v-on:keypress="NumbersOnly" @keydown.space="(event) => event.preventDefault()" :minlength=9 style="width: 100%" type="text" id="phone_number" name="phone_number" required></td>
             </tr>
             <tr v-if="contact === 'EMAIL'">
                 <td style="border: 1px solid; padding: 10px;"><label for="email">EMAIL </label></td>
@@ -60,11 +60,11 @@
             </tr>
             <tr>
                 <td style="border: 1px solid; padding: 10px;"><label for="bank_no">BANK NUMBER </label></td>
-                <td style="border: 1px solid; padding: 10px;"><input v-on:keypress="NumbersOnly" @keydown.space="(event) => event.preventDefault()" :maxlength=19 :minlength=6 style="width: 100%" type="text" id="bank_no" name="bank_no" required></td>
+                <td style="border: 1px solid; padding: 10px;"><input v-on:keypress="NumbersOnly" @keydown.space="(event) => event.preventDefault()" :minlength=6 style="width: 100%" type="text" id="bank_no" name="bank_no" required></td>
             </tr>
             <tr>
                 <td style="border: 1px solid; padding: 10px;"><label for="bank_owner_name">BANK OWNER FULL NAME </label></td>
-                <td style="border: 1px solid; padding: 10px;"><input :maxlength=30 style="width: 100%" type="text" id="bank_owner_name" name="bank_owner_name" required></td>
+                <td style="border: 1px solid; padding: 10px;"><input style="width: 100%" type="text" id="bank_owner_name" name="bank_owner_name" required></td>
             </tr>
             <tr>
                 <td style="border: 1px solid; padding: 10px;"><label for="expected_amount">EXPECTED AMOUNT </label></td>
@@ -76,11 +76,11 @@
             </tr>
             <tr>
                 <td style="border: 1px solid; padding: 10px;"><label for="pet_picture">PET PICTURE </label></td>
-                <td style="border: 1px solid; padding: 10px;"><input style="width: 100%" id="pet_picture" name="pet_picture" type="file" required></td>
+                <td style="border: 1px solid; padding: 10px;"><input style="width: 100%" accept="image/*" id="pet_picture" name="pet_picture" type="file" required></td>
             </tr>
             <tr>
                 <td style="border: 1px solid; padding: 10px;"><label for="vet_analysis">VET ANALYSIS </label></td>
-                <td style="border: 1px solid; padding: 10px;"><input style="width: 100%" id="vet_analysis" name="vet_analysis" type="file" required></td>
+                <td style="border: 1px solid; padding: 10px;"><input style="width: 100%" accept="image/*" id="vet_analysis" name="vet_analysis" type="file" required></td>
             </tr>
         </table>
     </div>

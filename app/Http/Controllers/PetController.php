@@ -98,14 +98,14 @@ class PetController extends Controller
         // dd($request->all());
 
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:20'],
             'type' => ['required', 'string'],
             'gender' => ['required', 'string'],
             'health_condition' => ['required', 'string'],
             'location' => ['required', 'string'],
             'state' => ['required', 'string'],
             'city' => ['required', 'string'],
-            'phone_number' => ['required','string'],
+            'phone_number' => ['required','string', 'max:12'],
             'pet_picture' => ['required', 'image'],
         ]);
 

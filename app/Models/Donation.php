@@ -23,8 +23,15 @@ class Donation extends Model
         'pet_picture',
         'vet_analysis',
         'status',
-        'receipt',
-        'updated_condition'
+        'receipt_1',
+        'updated_condition_1',
+        'description_1',
+        'receipt_2',
+        'updated_condition_2',
+        'description_2',
+        'receipt_3',
+        'updated_condition_3',
+        'description_3',
     ];
 
     public function donors () { return $this->hasMany('App\Models\DonorList', 'donation_id'); }

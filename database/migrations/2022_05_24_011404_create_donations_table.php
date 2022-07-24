@@ -30,8 +30,15 @@ class CreateDonationsTable extends Migration
             $table->string('pet_picture');
             $table->string('vet_analysis');
             $table->string('status');
-            $table->string('receipt')->nullable();
-            $table->string('updated_condition')->nullable();
+            $table->string('receipt_1')->nullable();
+            $table->string('updated_condition_1')->nullable();
+            $table->string('description_1')->nullable();
+            $table->string('receipt_2')->nullable();
+            $table->string('updated_condition_2')->nullable();
+            $table->string('description_2')->nullable();
+            $table->string('receipt_3')->nullable();
+            $table->string('updated_condition_3')->nullable();
+            $table->string('description_3')->nullable();
             $table->timestamps();
         });
     }

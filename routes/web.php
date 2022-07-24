@@ -89,48 +89,29 @@ Route::middleware('auth')->group(function() {
     Route::put('/medical-fund/{id}/my-list/view-details/update-case', 'App\Http\Controllers\DonationController@updateCase')->name('update.fund.case');
 });
 
-// Route::get('/url', function(Request $request) {
-//     $path = $request->url;
+// Route::get('/import_excel', 'App\Http\Controllers\ImportExcelController@index');
+// Route::post('/import_excel/import', 'App\Http\Controllers\ImportExcelController@import');
 
-//     $url = Storage::disk('s3')->temporaryUrl(
-//         $path,
-//         now()->addMinutes(10)
-//     );
-
-//     return $url;
+// Route::get('/skills', function() {
+//     return ['Laravel', 'Javascript', 'CSS'];
 // });
 
-// Route::get('/welcome', function () {
-//     return view('welcome');
+// Route::get('/certificate', function () {
+
+//     header('Content-type: image/jpeg');
+//     $font='C:\Users\nurfa\OneDrive\Documents\GitHub\save-the-strays\public\assets\certificate\arial.ttf';
+//     $path = 'assets\certificate\format.jpg';
+//     $image=imagecreatefromjpeg($path);
+//     $color=imagecolorallocate($image, 51, 51, 102);
+//     $date=date('d F, Y');
+//     imagettftext($image, 18, 0, 880, 188, $color,$font, $date);
+//     $name="YOUTUBE";
+//     imagettftext($image, 48, 0, 120, 520, $color,$font, $name);
+//     imagejpeg($image,"storage/app/certificate/" . $name . ".jpg");
+//     //imagejpeg($image);
+//     imagedestroy($image);
+//     $temp_path = 'storage/app/certificate/' . $name . '.jpg';
+//     return response()->download($temp_path);
 // });
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-Route::get('/import_excel', 'App\Http\Controllers\ImportExcelController@index');
-Route::post('/import_excel/import', 'App\Http\Controllers\ImportExcelController@import');
-
-Route::get('/skills', function() {
-    return ['Laravel', 'Javascript', 'CSS'];
-});
-
-Route::get('/certificate', function () {
-
-    header('Content-type: image/jpeg');
-    $font='C:\Users\nurfa\OneDrive\Documents\GitHub\save-the-strays\public\assets\certificate\arial.ttf';
-    $path = 'assets\certificate\format.jpg';
-    $image=imagecreatefromjpeg($path);
-    $color=imagecolorallocate($image, 51, 51, 102);
-    $date=date('d F, Y');
-    imagettftext($image, 18, 0, 880, 188, $color,$font, $date);
-    $name="YOUTUBE";
-    imagettftext($image, 48, 0, 120, 520, $color,$font, $name);
-    imagejpeg($image,"storage/app/certificate/" . $name . ".jpg");
-    //imagejpeg($image);
-    imagedestroy($image);
-    $temp_path = 'storage/app/certificate/' . $name . '.jpg';
-    return response()->download($temp_path);
-});
 
 require __DIR__.'/auth.php';

@@ -236,36 +236,99 @@ class DonationController extends Controller
 
         $donation = Donation::findOrFail($id);
 
-        Storage::disk('s3')->delete($donation->updated_condition);
+        if($donation->updated_condition_1 == null && $donation->receipt_1 == null) {
+            // Storage::disk('s3')->delete($donation->updated_condition_1);
 
-        $path1 = "storage/image/donation/updated_condition";
-        $file1= $request->file('updated_condition');
-        $filename1= $file1->getClientOriginalName();
-        //$file1-> move(public_path('storage/image/donation/updated_condition'), $filename1);
+            $path1 = "storage/image/donation/updated_condition";
+            $file1= $request->file('updated_condition');
+            $filename1= $file1->getClientOriginalName();
+            //$file1-> move(public_path('storage/image/donation/updated_condition'), $filename1);
 
-        $file1->storeAs(
-            $path1,
-            $filename1,
-            's3'
-        );
+            $file1->storeAs(
+                $path1,
+                $filename1,
+                's3'
+            );
 
-        $path2 = "storage/image/donation/receipt";
-        $file2= $request->file('receipt');
-        $filename2= $file2->getClientOriginalName();
-        //$file2-> move(public_path('storage/image/donation/receipt'), $filename2);
+            $path2 = "storage/image/donation/receipt";
+            $file2= $request->file('receipt');
+            $filename2= $file2->getClientOriginalName();
+            //$file2-> move(public_path('storage/image/donation/receipt'), $filename2);
 
-        $file2->storeAs(
-            $path2,
-            $filename2,
-            's3'
-        );
-            
-        Donation::where('id',$id)->update([
-            'health_condition' => $request['health_condition'],
-            'updated_condition' => $path1."/".$filename1,
-            'receipt' => $path2."/".$filename2,
+            $file2->storeAs(
+                $path2,
+                $filename2,
+                's3'
+            );
+                
+            Donation::where('id',$id)->update([
+                'description_1' => $request['health_condition'],
+                'updated_condition_1' => $path1."/".$filename1,
+                'receipt_1' => $path2."/".$filename2,
+            ]);
+        }
+        else if ($donation->updated_condition_2 == null && $donation->receipt_2 == null) {
+            // Storage::disk('s3')->delete($donation->updated_condition_2);
 
-        ]);
+            $path1 = "storage/image/donation/updated_condition";
+            $file1= $request->file('updated_condition');
+            $filename1= $file1->getClientOriginalName();
+            //$file1-> move(public_path('storage/image/donation/updated_condition'), $filename1);
+
+            $file1->storeAs(
+                $path1,
+                $filename1,
+                's3'
+            );
+
+            $path2 = "storage/image/donation/receipt";
+            $file2= $request->file('receipt');
+            $filename2= $file2->getClientOriginalName();
+            //$file2-> move(public_path('storage/image/donation/receipt'), $filename2);
+
+            $file2->storeAs(
+                $path2,
+                $filename2,
+                's3'
+            );
+                
+            Donation::where('id',$id)->update([
+                'description_2' => $request['health_condition'],
+                'updated_condition_2' => $path1."/".$filename1,
+                'receipt_2' => $path2."/".$filename2,
+            ]);
+        }
+        else if ($donation->updated_condition_3 == null && $donation->receipt_3 == null) {
+            // Storage::disk('s3')->delete($donation->updated_condition_3);
+
+            $path1 = "storage/image/donation/updated_condition";
+            $file1= $request->file('updated_condition');
+            $filename1= $file1->getClientOriginalName();
+            //$file1-> move(public_path('storage/image/donation/updated_condition'), $filename1);
+
+            $file1->storeAs(
+                $path1,
+                $filename1,
+                's3'
+            );
+
+            $path2 = "storage/image/donation/receipt";
+            $file2= $request->file('receipt');
+            $filename2= $file2->getClientOriginalName();
+            //$file2-> move(public_path('storage/image/donation/receipt'), $filename2);
+
+            $file2->storeAs(
+                $path2,
+                $filename2,
+                's3'
+            );
+                
+            Donation::where('id',$id)->update([
+                'description_3' => $request['health_condition'],
+                'updated_condition_3' => $path1."/".$filename1,
+                'receipt_3' => $path2."/".$filename2,
+            ]);
+        }
 
         session()->flash('message', 'Successfully Update');
 

@@ -95,7 +95,6 @@ class PetController extends Controller
     }
 
     public function createPet(Request $request, $id) {
-        // dd($request->all());
 
         $request->validate([
             'name' => ['required', 'string', 'max:20'],
